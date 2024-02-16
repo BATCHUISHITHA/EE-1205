@@ -143,38 +143,54 @@ Which one of the following is the CORRECT expression for the transfer function $
 
 \begin{table}[!ht]
     \centering
-        \input{./tables/tableg44}
+        \input{./tables/tableg44.1}
     \caption{Input Parameters}
     \label{tab: ishithagatech44.t1}
 \end{table}
 
+\begin{table}[!ht]
+    \centering
+        \input{./tables/tableg44.2}
+    \caption{Defined Parameters}
+    \label{tab: ishithagatech44.t2}
+\end{table}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.25]{../gate23.ch.44/figs/g44fig2.jpeg}
+    \caption{ }
+    \label{}
+\end{figure}
+
+\newpage
+
 \begin{equation}
-\sbrak{\brak{y_{sp}-y}(1) -a}10+ d_2(s)\frac{1}{0.1s+1} =a \\ \label{eq:ishitha.g23.ch44.1.eq}
+\sbrak{\brak{y_{sp}-y(s)}(1) -a}10+ d_2(s)\frac{1}{0.1s+1} =a \\ \label{eq:ishitha.g23.ch44.1.eq}
 \end{equation}
 
 \begin{equation}
-a\brak{\frac{1}{s+1}} + d_1(s)\frac{1}{(2s+1)} =y \\  \label{eq:ishitha.g23.ch44.2.eq}
+a\brak{\frac{1}{s+1}} + d_1(s)\frac{1}{(2s+1)} =y(s) \\  \label{eq:ishitha.g23.ch44.2.eq}
 \end{equation}
 
 From~\eqref{eq:ishitha.g23.ch44.1.eq}
 \begin{align}
-\brak{y_{sp}-y}10 -10a + d_2(s)\frac{1}{0.1s+1}&=a \\
-\brak{y_{sp}-y}10 + \frac{d_2(s)}{0.1s+1} =11a 
+\brak{y_{sp}-y(s)}10 -10a + d_2(s)\frac{1}{0.1s+1}&=a \\
+\brak{y_{sp}-y(s)}10 + \frac{d_2(s)}{0.1s+1} =11a 
 \end{align}
 
 \begin{equation}
-\brak{y_{sp}-y}\frac{10}{11} + \frac{d_2(s)}{11\brak{0.1s+1}} = a \\ \label{eq:ishitha.g23.ch44.3.eq}
+\brak{y_{sp}-y(s)}\frac{10}{11} + \frac{d_2(s)}{11\brak{0.1s+1}} = a \\ \label{eq:ishitha.g23.ch44.3.eq}
 \end{equation}
 
 Substituting ~\eqref{eq:ishitha.g23.ch44.3.eq} in ~\eqref{eq:ishitha.g23.ch44.2.eq}
 \begin{align}
-\sbrak{\brak{y_{sp}-y}\frac{10}{11} + \frac{d_2(s)}{11\brak{0.1s+1}}  }\frac{1}{\brak{s+1}} + d_1(s)\frac{1}{(2s+1)} &= y \\
-\brak{y_{sp}-y}\frac{10}{11}\frac{1}{\brak{s+1}} + \frac{d_2(s)}{11\brak{0.1s+1}\brak{s+1}} +  d_1(s)\frac{1}{(2s+1)} &= y 
+\sbrak{\brak{y_{sp}-y(s)}\frac{10}{11} + \frac{d_2(s)}{11\brak{0.1s+1}}  }\frac{1}{\brak{s+1}} + d_1(s)\frac{1}{(2s+1)} &= y(s) \\
+\brak{y_{sp}-y(s)}\frac{10}{11}\frac{1}{\brak{s+1}} + \frac{d_2(s)}{11\brak{0.1s+1}\brak{s+1}} +  d_1(s)\frac{1}{(2s+1)} &= y(s) 
 \end{align} 
 
 \begin{align}
-\brak{0-y}\frac{10}{11}\frac{1}{\brak{s+1}} + \frac{d_2(s)}{11\brak{0.1s+1}\brak{s+1}} &= y \\
-\frac{d_2(s)}{11\brak{0.1s+1}\brak{s+1}} &= y + \frac{10}{11}y\frac{1}{\brak{s+1}} \\
+\brak{0-y(s)}\frac{10}{11}\frac{1}{\brak{s+1}} + \frac{d_2(s)}{11\brak{0.1s+1}\brak{s+1}} &= y(s) \\
+\frac{d_2(s)}{11\brak{0.1s+1}\brak{s+1}} &= y(s) + \frac{10}{11}y(s)\frac{1}{\brak{s+1}} \\
 \frac{d_2(s)}{11\brak{0.1s+1}\brak{s+1}} &= y(s)\brak{1 + \frac{10}{11}\frac{1}{\brak{s+1}}} \\
 \frac{d_2(s)}{11\brak{0.1s+1}\brak{s+1}} &= y(s)\brak{\frac{11\brak{s+1}+10}{11\brak{s+1}}} \\
 \frac{d_2{s}}{\brak{0.1s+1}} &= y(s)\sbrak{11s+ 11 +10} \\
@@ -182,4 +198,20 @@ Substituting ~\eqref{eq:ishitha.g23.ch44.3.eq} in ~\eqref{eq:ishitha.g23.ch44.2.
 \frac{y(s)}{d_2{s}} &= \frac{1}{\brak{0.1s+1}\brak{11s+21}} \\
 \implies G_{d2}(s) &= \frac{1}{\brak{0.1s+1}\brak{11s+21}}
 \end{align}
+
+Now taking the inverse laplace transform we have,
+\begin{align}
+G_{d2}(t) &= \mathcal{L}^{-1}\brak{\frac{10}{\brak{s+10}\brak{11s+21}}} \\
+&=\mathcal{L}^{-1}{\brak{\frac{-10}{89\brak{x+10}} + \frac{110}{89\brak{11x+21}}}} \\
+&= \frac{-10e^{-10t}}{89} + \frac{10e^{\frac{-21t}{11}}}{89} \\
+&= \frac{10\brak{e^{\frac{-21t}{11}}-e^{-10t}}}{89}
+\end{align}
+
+\begin{figure}[h]
+    \centering
+     \includegraphics[width=\columnwidth]{./figs/g44fig1.png}
+    \caption{}    
+    \label{fig:ishitha.g23.ch.44.f1}
+\end{figure}
+
 \end{document}

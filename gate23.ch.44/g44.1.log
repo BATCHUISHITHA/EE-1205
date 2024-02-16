@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.1.3)  14 FEB 2024 15:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.1.3)  17 FEB 2024 00:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1026,14 +1026,17 @@ LaTeX Font Info:    Trying to load font information for OT1+txr on input line 3
 8.
  (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
-) (./g44.1.aux)
+) (./g44.1.aux
+
+LaTeX Warning: Label `' multiply defined.
+
+)
 \openout1 = `g44.1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 38.
 LaTeX Font Info:    Trying to load font information for OML+txmi on input line 
 38.
-
-(/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 38.
@@ -1210,19 +1213,40 @@ File: ../gate23.ch.44/figs/g44fig1.jpeg Graphic file (type jpg)
 Package pdftex.def Info: ../gate23.ch.44/figs/g44fig1.jpeg  used on input line 
 130.
 (pdftex.def)             Requested size: 279.79462pt x 116.93658pt.
-(./tables/tableg44.tex) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <
-../gate23.ch.44/figs/g44fig1.jpeg>] [2] (./g44.1.aux)
+(./tables/tableg44.1.tex) (./tables/tableg44.2.tex)
+<../gate23.ch.44/figs/g44fig2.jpeg, id=8, 831.85782pt x 352.31625pt>
+File: ../gate23.ch.44/figs/g44fig2.jpeg Graphic file (type jpg)
+<use ../gate23.ch.44/figs/g44fig2.jpeg>
+Package pdftex.def Info: ../gate23.ch.44/figs/g44fig2.jpeg  used on input line 
+160.
+(pdftex.def)             Requested size: 207.96394pt x 88.07884pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <../gate23.ch.44/figs/g44
+fig1.jpeg>] [2 <../gate23.ch.44/figs/g44fig2.jpeg>]
+<./figs/g44fig1.png, id=52, 462.528pt x 346.896pt>
+File: ./figs/g44fig1.png Graphic file (type png)
+<use ./figs/g44fig1.png>
+Package pdftex.def Info: ./figs/g44fig1.png  used on input line 212.
+(pdftex.def)             Requested size: 516.0pt x 387.0176pt.
+ [3 <./figs/g44fig1.png>]
+(./g44.1.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `g44.1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 29159 strings out of 478287
- 575074 string characters out of 5849290
- 832543 words of memory out of 5000000
- 46717 multiletter control sequences out of 15000+600000
+ 29191 strings out of 478287
+ 575691 string characters out of 5849290
+ 839640 words of memory out of 5000000
+ 46732 multiletter control sequences out of 15000+600000
  550156 words of font info for 204 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 101i,10n,96p,409b,331s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 101i,11n,96p,409b,337s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type
@@ -1231,10 +1255,10 @@ fonts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on g44.1.pdf (2 pages, 103826 bytes).
+Output written on g44.1.pdf (3 pages, 189158 bytes).
 PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
- 24 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 107 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
+ 32 named destinations out of 1000 (max. 500000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 
