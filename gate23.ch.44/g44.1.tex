@@ -165,19 +165,19 @@ Which one of the following is the CORRECT expression for the transfer function $
 \newpage
 
 \begin{align}
-\sbrak{\brak{y_{sp}-y(s)}(1) -a(s)}10+ d_2(s)\frac{1}{0.1s+1} &=a(s)  \label{eq:ishitha.g23.ch44.1.eq} \\
+\sbrak{\brak{y_{set}-y(s)}(1) -a(s)}10+ d_2(s)\frac{1}{0.1s+1} &=a(s)  \label{eq:ishitha.g23.ch44.1.eq} \\
 a(s)\brak{\frac{1}{s+1}} + d_1(s)\frac{1}{(2s+1)} &=y(s)  \label{eq:ishitha.g23.ch44.2.eq}
 \end{align}
 
 From ~\eqref{eq:ishitha.g23.ch44.1.eq}
 \begin{align}
-\brak{y_{sp}-y(s)}10 -10a(s) + d_2(s)\frac{1}{0.1s+1}&=a(s) \\
-\brak{y_{sp}-y(s)}\frac{10}{11} + \frac{d_2(s)}{11\brak{0.1s+1}} &= a(s)  \label{eq:ishitha.g23.ch44.3.eq}
+\brak{y_{set}-y(s)}10 -10a(s) + d_2(s)\frac{1}{0.1s+1}&=a(s) \\
+\brak{y_{set}-y(s)}\frac{10}{11} + \frac{d_2(s)}{11\brak{0.1s+1}} &= a(s)  \label{eq:ishitha.g23.ch44.3.eq}
 \end{align}
 
 Substituting ~\eqref{eq:ishitha.g23.ch44.3.eq} in ~\eqref{eq:ishitha.g23.ch44.2.eq}
 \begin{align}
-\sbrak{\brak{y_{sp}-y(s)}\frac{10}{11} + \frac{d_2(s)}{11\brak{0.1s+1}}  }\frac{1}{\brak{s+1}} + d_1(s)\frac{1}{(2s+1)} &= y(s) \\
+\sbrak{\brak{y_{set}-y(s)}\frac{10}{11} + \frac{d_2(s)}{11\brak{0.1s+1}}  }\frac{1}{\brak{s+1}}+ d_1(s)\frac{1}{(2s+1)} &= y(s) \\
 \brak{0-y(s)}\frac{10}{11}\frac{1}{\brak{s+1}} + \frac{d_2(s)}{11\brak{0.1s+1}\brak{s+1}} &= y(s) \\
 \frac{d_2(s)}{11\brak{0.1s+1}\brak{s+1}} &= y(s)\brak{\frac{11\brak{s+1}+10}{11\brak{s+1}}} \\
 \frac{d_2{s}}{\brak{0.1s+1}} &= y(s)\sbrak{11s+21} \\
