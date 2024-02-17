@@ -157,45 +157,31 @@ Which one of the following is the CORRECT expression for the transfer function $
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.25]{../gate23.ch.44/figs/g44fig2.jpeg}
+    \includegraphics[scale=0.30]{../gate23.ch.44/figs/g44fig2.jpeg}
     \caption{ }
     \label{}
 \end{figure}
 
 \newpage
 
-\begin{equation}
-\sbrak{\brak{y_{sp}-y(s)}(1) -a}10+ d_2(s)\frac{1}{0.1s+1} =a \\ \label{eq:ishitha.g23.ch44.1.eq}
-\end{equation}
-
-\begin{equation}
-a\brak{\frac{1}{s+1}} + d_1(s)\frac{1}{(2s+1)} =y(s) \\  \label{eq:ishitha.g23.ch44.2.eq}
-\end{equation}
+\begin{align}
+\sbrak{\brak{y_{sp}-y(s)}(1) -a(s)}10+ d_2(s)\frac{1}{0.1s+1} &=a(s) \\ \label{eq:ishitha.g23.ch44.1.eq}
+a(s)\brak{\frac{1}{s+1}} + d_1(s)\frac{1}{(2s+1)} &=y(s)  \label{eq:ishitha.g23.ch44.2.eq}
+\end{align}
 
 From~\eqref{eq:ishitha.g23.ch44.1.eq}
 \begin{align}
-\brak{y_{sp}-y(s)}10 -10a + d_2(s)\frac{1}{0.1s+1}&=a \\
-\brak{y_{sp}-y(s)}10 + \frac{d_2(s)}{0.1s+1} =11a 
+\brak{y_{sp}-y(s)}10 -10a(s) + d_2(s)\frac{1}{0.1s+1}&=a(s) \\
+\brak{y_{sp}-y(s)}\frac{10}{11} + \frac{d_2(s)}{11\brak{0.1s+1}} &= a(s)  \label{eq:ishitha.g23.ch44.3.eq}
 \end{align}
 
-\begin{equation}
-\brak{y_{sp}-y(s)}\frac{10}{11} + \frac{d_2(s)}{11\brak{0.1s+1}} = a \\ \label{eq:ishitha.g23.ch44.3.eq}
-\end{equation}
-
-Substituting ~\eqref{eq:ishitha.g23.ch44.3.eq} in ~\eqref{eq:ishitha.g23.ch44.2.eq}
+\text{Substituting ~\eqref{eq:ishitha.g23.ch44.3.eq} in ~\eqref{eq:ishitha.g23.ch44.2.eq}}
 \begin{align}
 \sbrak{\brak{y_{sp}-y(s)}\frac{10}{11} + \frac{d_2(s)}{11\brak{0.1s+1}}  }\frac{1}{\brak{s+1}} + d_1(s)\frac{1}{(2s+1)} &= y(s) \\
-\brak{y_{sp}-y(s)}\frac{10}{11}\frac{1}{\brak{s+1}} + \frac{d_2(s)}{11\brak{0.1s+1}\brak{s+1}} +  d_1(s)\frac{1}{(2s+1)} &= y(s) 
-\end{align} 
-
-\begin{align}
 \brak{0-y(s)}\frac{10}{11}\frac{1}{\brak{s+1}} + \frac{d_2(s)}{11\brak{0.1s+1}\brak{s+1}} &= y(s) \\
-\frac{d_2(s)}{11\brak{0.1s+1}\brak{s+1}} &= y(s) + \frac{10}{11}y(s)\frac{1}{\brak{s+1}} \\
-\frac{d_2(s)}{11\brak{0.1s+1}\brak{s+1}} &= y(s)\brak{1 + \frac{10}{11}\frac{1}{\brak{s+1}}} \\
 \frac{d_2(s)}{11\brak{0.1s+1}\brak{s+1}} &= y(s)\brak{\frac{11\brak{s+1}+10}{11\brak{s+1}}} \\
-\frac{d_2{s}}{\brak{0.1s+1}} &= y(s)\sbrak{11s+ 11 +10} \\
 \frac{d_2{s}}{\brak{0.1s+1}} &= y(s)\sbrak{11s+21} \\
-\frac{y(s)}{d_2{s}} &= \frac{1}{\brak{0.1s+1}\brak{11s+21}} \\
+\frac{y(s)}{d_2(s)} &= \frac{1}{\brak{0.1s+1}\brak{11s+21}} \\
 \implies G_{d2}(s) &= \frac{1}{\brak{0.1s+1}\brak{11s+21}}
 \end{align}
 
