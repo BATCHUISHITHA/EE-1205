@@ -11,7 +11,7 @@ void linespace(int start, int stop, int step, int* t_values, double* Gt_values, 
 int main() {
     // Define the range and step size
     int start = 0;
-    int stop = 10;
+    int stop = 20;
     int step = 1;
 
     // Calculate the number of values in the range

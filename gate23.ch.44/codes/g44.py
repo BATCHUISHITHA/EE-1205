@@ -15,7 +15,6 @@ plt.plot(t_values, Gt_values, marker='o', linestyle='-', label='Continuous Plot'
 plt.xlabel('$t$')
 plt.ylabel('$G(t)$')
 plt.grid(True)
-plt.yscale('log')
 plt.gca().xaxis.set_major_locator(MultipleLocator(1))
 plt.legend()
 plt.savefig('../figs/g44fig1.png')
