@@ -10,7 +10,7 @@ t_values = data[:, 0]
 Gt_values = data[:, 1]
 
 # Create a continuous plot
-plt.plot(t_values, Gt_values, marker='o', linestyle='-', label='Continuous Plot')
+plt.plot(t_values/10, Gt_values, marker='', linestyle='-', label='Continuous Plot')
 
 plt.xlabel('$t$')
 plt.ylabel('$G(t)$')

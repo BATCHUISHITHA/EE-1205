@@ -11,7 +11,7 @@ void linespace(int start, int stop, int step, int* t_values, double* Gt_values, 
 int main() {
     // Define the range and step size
     int start = 0;
-    int stop = 20;
+    int stop = 40;
     int step = 1;
 
     // Calculate the number of values in the range
@@ -30,7 +30,7 @@ int main() {
   
     if (file != NULL) {
         for (int i = 0; i < num_values; ++i) {
-            fprintf(file, "%d %.10lf\n", t_values[i], Gt_values[i]);
+            fprintf(file, "%d %.30lf\n", t_values[i], Gt_values[i]);
         }
 
         fclose(file);
