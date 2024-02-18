@@ -10,12 +10,12 @@ t_values = data[:, 0]
 Gt_values = data[:, 1]
 
 # Create a continuous plot
-plt.plot(t_values, Gt_values, marker='', linestyle='-', label='Continuous Plot')
+plt.plot(t_values/10, Gt_values, marker='', linestyle='-', label='Continuous Plot')
 
 plt.xlabel('$t$')
 plt.ylabel('$G(t)$')
 plt.grid(True)
-plt.gca().xaxis.set_major_locator(MultipleLocator(0.125))
+plt.gca().xaxis.set_major_locator(MultipleLocator(1))
 plt.legend()
 plt.savefig('../figs/g44fig1.png')
 plt.show()

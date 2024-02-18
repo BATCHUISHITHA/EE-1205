@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-void linespace(int start, int stop, int step, int* t_values, double* Gt_values, int num_values) {
+void linespace(float start, float stop, float step, float* t_values, double* Gt_values, int num_values) {
     for (int i = 0; i < num_values; ++i) {
         t_values[i] = start + i * step;
         Gt_values[i] =  (10 * (exp(-21 * t_values[i]/ 11.0) - exp(-10 * t_values[i]))) / 89.0;
@@ -10,15 +10,15 @@ void linespace(int start, int stop, int step, int* t_values, double* Gt_values, 
 
 int main() {
     // Define the range and step size
-    int start = 0;
-    int stop = 40;
-    int step = 1;
+    float start = 0;
+    float stop = 40;
+    float step = 0.25;
 
     // Calculate the number of values in the range
     int num_values = (stop - start) / step + 1;
 
     // Allocate arrays to store the generated values
-    int t_values[num_values];
+    float t_values[num_values];
     double Gt_values[num_values];
 
     // Call the linespace function
@@ -30,7 +30,7 @@ int main() {
   
     if (file != NULL) {
         for (int i = 0; i < num_values; ++i) {
-            fprintf(file, "%.6f %.30lf\n", t_values[i]/160.0, Gt_values[i]);
+            fprintf(file, "%.6f %.30lf\n", t_values[i], Gt_values[i]);
         }
 
         fclose(file);
