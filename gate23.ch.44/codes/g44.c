@@ -30,7 +30,7 @@ int main() {
   
     if (file != NULL) {
         for (int i = 0; i < num_values; ++i) {
-            fprintf(file, "%d %.30lf\n", t_values[i], Gt_values[i]);
+            fprintf(file, "%.6f %.30lf\n", t_values[i]/160.0, Gt_values[i]);
         }
 
         fclose(file);
