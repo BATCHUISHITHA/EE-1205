@@ -127,7 +127,7 @@ Which one of the following is the CORRECT expression for the transfer function $
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.25]{../gate23.ch.44/figs/g44fig1.jpeg}
+    \includegraphics[width=\columnwidth]{../gate23.ch.44/figs/g44fig1.jpeg}
     \caption{ }
     \label{}
 \end{figure}
@@ -157,32 +157,20 @@ Which one of the following is the CORRECT expression for the transfer function $
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\columnwidth]{../gate23.ch.44/figs/g44fig2.jpeg}
-    \caption{ }
-    \label{}
+    \input{figs/sfg}
+    \caption{signal flow graph}
+    \label{fig:ishitha.g23.ch.44.f1}
 \end{figure}
 
 \newpage
+Using Mason's Gain formula for the above Signal flow graph,
 
 \begin{align}
-\sbrak{\brak{y_{set}-y(s)}(1) -a(s)}10+ d_2(s)\frac{1}{0.1s+1} &=a(s)  \label{eq:ishitha.g23.ch44.1.eq} \\
-a(s)\brak{\frac{1}{s+1}} + d_1(s)\frac{1}{(2s+1)} &=y(s)  \label{eq:ishitha.g23.ch44.2.eq}
-\end{align}
-
-From \ref{eq:ishitha.g23.ch44.1.eq}
-\begin{align}
-\brak{y_{set}-y(s)}10 -10a(s) + d_2(s)\frac{1}{0.1s+1}&=a(s) \\
-\brak{y_{set}-y(s)}\frac{10}{11} + \frac{d_2(s)}{11\brak{0.1s+1}} &= a(s)  \label{eq:ishitha.g23.ch44.3.eq}
-\end{align}
-
-Substituting \ref{eq:ishitha.g23.ch44.3.eq} in \ref{eq:ishitha.g23.ch44.2.eq}
-\begin{align}
-\sbrak{\brak{y_{set}-y(s)}\frac{10}{11} + \frac{d_2(s)}{11\brak{0.1s+1}}  }\frac{1}{\brak{s+1}}+ d_1(s)\brak{\frac{1}{2s+1}} &= y(s) \\
-\brak{0-y(s)}\frac{10}{11}\frac{1}{\brak{s+1}} + \frac{d_2(s)}{11\brak{0.1s+1}\brak{s+1}} &= y(s) \\
-\frac{d_2(s)}{11\brak{0.1s+1}\brak{s+1}} &= y(s)\brak{\frac{11\brak{s+1}+10}{11\brak{s+1}}} \\
-\frac{d_2{s}}{\brak{0.1s+1}} &= y(s)\sbrak{11s+21} \\
-\frac{y(s)}{d_2(s)} &= \frac{1}{\brak{0.1s+1}\brak{11s+21}} \\
-\implies G_{d2}(s) &= \frac{1}{\brak{0.1s+1}\brak{11s+21}}
+G_{d2}(s) = \frac{y(s)}{d_2(s)} &= \frac{{\sum_{i=1}^{n} P_i\Delta_i}}{{\Delta}} \\
+&= \frac{P_1\Delta_1 }{\Delta}\\
+&= \frac{\frac{1}{\brak{0.1s+1}\brak{s+1}}}{1+\frac{10}{s+1}+10} \\
+&= \frac{\frac{1}{\brak{0.1s+1}\brak{s+1}}}{\frac{11s+21}{s+1}} \\
+\implies G_{d2}(s) &= \frac{1}{(11s+21)(0.1s+1)}
 \end{align}
 
 Now taking the inverse laplace transform we have,
@@ -197,7 +185,7 @@ G_{d2}(t) &= \mathcal{L}^{-1}\brak{\frac{10}{\brak{s+10}\brak{11s+21}}} \\
     \centering
      \includegraphics[width=\columnwidth]{./figs/g44fig1.png}
     \caption{}    
-    \label{fig:ishitha.g23.ch.44.f1}
+    \label{fig:ishitha.g23.ch.44.f2}
 \end{figure}
 
 \end{document}

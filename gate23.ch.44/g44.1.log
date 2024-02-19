@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.1.3)  18 FEB 2024 15:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.1.3)  19 FEB 2024 16:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1026,17 +1026,14 @@ LaTeX Font Info:    Trying to load font information for OT1+txr on input line 3
 8.
  (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
-) (./g44.1.aux
-
-LaTeX Warning: Label `' multiply defined.
-
-)
+) (./g44.1.aux)
 \openout1 = `g44.1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 38.
 LaTeX Font Info:    Trying to load font information for OML+txmi on input line 
 38.
- (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 38.
@@ -1212,41 +1209,49 @@ File: ../gate23.ch.44/figs/g44fig1.jpeg Graphic file (type jpg)
 <use ../gate23.ch.44/figs/g44fig1.jpeg>
 Package pdftex.def Info: ../gate23.ch.44/figs/g44fig1.jpeg  used on input line 
 130.
-(pdftex.def)             Requested size: 279.79462pt x 116.93658pt.
-(./tables/tableg44.1.tex) (./tables/tableg44.2.tex)
-<../gate23.ch.44/figs/g44fig2.jpeg, id=8, 1119.18124pt x 467.7475pt>
-File: ../gate23.ch.44/figs/g44fig2.jpeg Graphic file (type jpg)
-<use ../gate23.ch.44/figs/g44fig2.jpeg>
-Package pdftex.def Info: ../gate23.ch.44/figs/g44fig2.jpeg  used on input line 
-160.
 (pdftex.def)             Requested size: 516.0pt x 215.65892pt.
-
+(./tables/tableg44.1.tex) (./tables/tableg44.2.tex) (./figs/sfg.tex
+Missing character: There is no , in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no , in font nullfont!
+)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <../gate23.ch.44/figs/g44
-fig1.jpeg>] [2 <../gate23.ch.44/figs/g44fig2.jpeg>]
-<./figs/g44fig1.png, id=47, 462.528pt x 346.896pt>
+fig1.jpeg>]
+<./figs/g44fig1.png, id=26, 462.528pt x 346.896pt>
 File: ./figs/g44fig1.png Graphic file (type png)
 <use ./figs/g44fig1.png>
-Package pdftex.def Info: ./figs/g44fig1.png  used on input line 198.
+Package pdftex.def Info: ./figs/g44fig1.png  used on input line 186.
 (pdftex.def)             Requested size: 516.0pt x 387.0176pt.
- [3 <./figs/g44fig1.png>]
-(./g44.1.aux)
 
-LaTeX Warning: There were multiply-defined labels.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2] [3 <./figs/g44fig1.png>] (./g44.1.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package rerunfilecheck Info: File `g44.1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 29186 strings out of 478287
- 575626 string characters out of 5849290
- 832643 words of memory out of 5000000
- 46732 multiletter control sequences out of 15000+600000
+ 29408 strings out of 478287
+ 580459 string characters out of 5849290
+ 845415 words of memory out of 5000000
+ 46956 multiletter control sequences out of 15000+600000
  550156 words of font info for 204 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 101i,11n,96p,409b,337s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 101i,11n,96p,409b,1204s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type
@@ -1255,10 +1260,10 @@ fonts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on g44.1.pdf (3 pages, 179863 bytes).
+Output written on g44.1.pdf (3 pages, 126697 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
- 75 compressed objects within 1 object stream
- 27 named destinations out of 1000 (max. 500000)
- 28 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 91 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
+ 22 named destinations out of 1000 (max. 500000)
+ 23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
