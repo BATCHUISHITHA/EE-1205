@@ -32,7 +32,7 @@ terminal/.style 2 args={draw,circle,inner sep=2pt,label={#1:#2}},
 
 %Draw the connections
 \draw[amark](ysp) to (a);
-\draw[amark] (a) to node[midway, above]{$1$} (b);
+\draw[amark] (a) to node[midway,above]{$1$} (b);
 \draw[amark] (b) to node[midway, above]{$10$} (c);
 \draw[amark=$-1$,label revd] (c) to[bend left=90] (b);
 \draw[amark] (c) to node [midway,above]{$\frac{1}{s+1}$} (d);
