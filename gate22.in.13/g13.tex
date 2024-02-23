@@ -130,34 +130,45 @@ Q: A periodic function $f(x)$, with period 2, is defined as \\
 \item Both $cos(n\pi x)$ and $sin(n\pi x)$ where n=1,2,3...
 \item Only $sin(n\pi x)$ where n=1,2,3...
 \item Only $cos(n\pi x)$ where n=1,2,3...
-\item Only $cos(2n\pi x)$ where n=1,2,3...  \hfill{\brak{GATE-2022-IN} }
+\item Only $cos(2n\pi x)$ where n=1,2,3...  \hfill{GATE IN 2022 }
 \end{enumerate} 
 
 \solution
-  \begin{align}   
-   f(x) =
-   \begin{cases}
-     -1-x & -1 \leq x<0 \\
-     +1-x &  0 <x \leq1 
-   \end{cases}
-   \end{align}
-   
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=\columnwidth]{figs/f}
-    \caption{ }
-    \label{ishitha.g13.f1}
-\end{figure} 
 
-\newpage
+The Fourier series expansion is 
 \begin{align}
-f(-x) &= -f(x)
+f(x) &= \frac{a_0}{2} + \sum_{n=1}^{\infty}\sbrak{{a_n}cos(n \pi x) + {b_n}sin(n \pi x)} 
 \end{align}
-So, The function f(x) is odd function. \\
-Since the function is aperiodic, The function f(x) doesn't have halfwave symmetry.\\
-So, only sine terms will be present in fourier series of this function f(x). \\
 
- $f(x)=sin(n\pi x)$   where n=1,2,3...
+\begin{align}
+{a_0} &= \int_{-1}^{1} f(x) \, dx \\
+&= \int_{-1}^{0} \brak{-1-x} \, dx + \int_{0}^{1} \brak{+1-x} \, dx \\
+&= \brak{-x -\frac{x^2}{2}}_{-1}^{0} + \brak{x -\frac{x^2}{2}}_{0}^{1} \\
+&= \brak{0} - \brak{1 - \frac{1}{2}} + \brak{1 - \frac{1}{2}} - \brak{0} \\
+\implies {a_0}&= 0
+\end{align}
+
+\begin{align}
+{a_n} &= \int_{-1}^{1} f(x) cos(n \pi x) \, dx \\
+&= \int_{-1}^{0} \brak{-1-x}cos(n \pi x) \, dx + \int_{0}^{1} \brak{+1-x}cos(n \pi x) \, dx \\
+&= -\brak{\frac{sin(n \pi x)}{n \pi}}_{-1}^{0} -\brak{x \frac{sin(n \pi x)}{n \pi} - \int_{-1}^{0}\frac{sin(n \pi x)}{n \pi}  \, dx }  + \brak{\frac{sin(n \pi x)}{n \pi}}_{0}^{1} -\brak{x \frac{sin(n \pi x)}{n \pi} - \int_{0}^{1}\frac{sin(n \pi x)}{n \pi}  \, dx} \\
+&= 0 -\brak{x \frac{sin(n \pi x)}{n \pi} + \frac{cos(n \pi x)}{\brak{n \pi}^2}}_{-1}^{0} + 0 -  \brak{x \frac{sin(n \pi x)}{n \pi} + \frac{cos(n \pi x)}{\brak{n \pi}^2}}_{0}^{1} \\
+&= - \brak{\frac{1}{\brak{n \pi}^2} - \frac{(-1)^n}{\brak{n \pi}^2}} - \brak{\frac{(-1)^n}{\brak{n \pi}^2} - \frac{1}{\brak{n \pi}^2}} \\
+\implies {a_n}&= 0
+\end{align}
+
+\begin{align}
+{b_n} &= \int_{-1}^{1} f(x) sin(n \pi x) \, dx \\
+&= \int_{-1}^{0} \brak{-1-x}sin(n \pi x) \, dx + \int_{0}^{1} \brak{+1-x}sin(n \pi x) \, dx \\
+&= -\brak{\frac{-cos(n \pi x)}{n \pi}}_{-1}^{0} -\brak{x \frac{-cos(n \pi x)}{n \pi} -\int_{-1}^{0}\frac{-cos(n \pi x)}{n \pi}  \, dx }  + \brak{\frac{-cos(n \pi x)}{n \pi}}_{0}^{1} -\brak{x \frac{-cos(n \pi x)}{n \pi} - \int_{0}^{1}\frac{-cos(n \pi x)}{n \pi}  \, dx} \\
+&= -\brak{\frac{1}{n \pi} - \frac{(-1)^n}{n \pi}} -\brak{x \frac{-cos(n \pi x)}{n \pi}+ \frac{sin(n \pi x)}{(n \pi)^2}}_{-1}^{0} +
+\brak{\frac{1}{n \pi} - \frac{(-1)^n}{n \pi}} -\brak{x \frac{-cos(n \pi x)}{n \pi}+ \frac{sin(n \pi x)}{(n \pi)^2}}_{0}^{1} \\
+&= 0-\brak{0 - \frac{(-1)^n}{n \pi}} -\brak{- \frac{(-1)^n}{n \pi} - 0 } \\
+\implies {b_n}&= 2 \frac{(-1)^n}{n \pi}
+\end{align}
+
+ $\implies$ Fourier series expansion is $f(x) = \sum_{n=1}^{\infty} 2 \frac{(-1)^n}{n \pi}sin(n \pi x)$ . \\
+ $\therefore$ The Fourier series of this function contains only $sin(n\pi x)$ where n=1,2,3...
  
 
 \end{document}
