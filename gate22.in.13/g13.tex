@@ -127,32 +127,83 @@ Q: A periodic function $f(x)$, with period 2, is defined as \\
    \end{align} 
    The Fourier series of this function contains \\
 \begin{enumerate}[label=\Alph*.]
-\item Both $cos(n\pi x)$ and $sin(n\pi x)$ where n=1,2,3...
-\item Only $sin(n\pi x)$ where n=1,2,3...
-\item Only $cos(n\pi x)$ where n=1,2,3...
-\item Only $cos(2n\pi x)$ where n=1,2,3...  \hfill{GATE IN 2022 }
+\item Both $\cos(n\pi x)$ and $sin(n\pi x)$ where n=1,2,3...
+\item Only $\sin(n\pi x)$ where n=1,2,3...
+\item Only $\cos(n\pi x)$ where n=1,2,3...
+\item Only $\cos(2n\pi x)$ where n=1,2,3...  \hfill{GATE IN 2022 }
 \end{enumerate} 
 
 \solution
 
+\begin{table}[!ht]    
+    \centering
+    \input{tables/table.tex}
+    \caption{Input Parameters}
+    \label{table:ishitha.g22.in.13.t1}
+\end{table}
+
+The complex exponential Fourier Series of $f\brak{x}$ is,
 \begin{align}
-C_{n} &= \frac{1}{2} \int_{-1}^{1} f(x) e^{-jn\omega_{0}x} \, dx \\
+    f\brak{x}&=\sum_{n=-\infty}^{\infty}c_ne^{jn\omega_{0}x}\\
+    \implies c_n&=\frac{1}{T}\int_{\frac{-T}{2}}^{\frac{-T}{2}}f\brak{x}e^{-jn\omega_{0}x}\;dx\\
+\end{align}    
+
+For $n\neq 0$;
+\begin{align}
+c_{n} &= \frac{1}{2} \int_{-1}^{1} f(x) e^{-jn\omega_{0}x} \, dx \\
 &= \frac{1}{2} \brak{ \int_{-1}^{0}\brak{-1-x}e^{-jn\omega_{0}x} \, dx +  \int_{0}^{1}\brak{+1-x}e^{-jn\omega_{0}x} \, dx } \\
 &= \frac{1}{2} \brak{-\int_{-1}^{0}e^{-jn\omega_{0}x} \, dx-\int_{-1}^{1}xe^{-jn\omega_{0}x} \, dx + \int_{0}^{1}e^{-jn\omega_{0}x} \, dx} \\
 &= \frac{1}{2} \sbrak{\frac{-1}{jn\omega_{0}}\sbrak{-\brak{1 - e^{+jn\omega_{0}}} + \brak{e^{-jn\omega_{0}} -1}} -\int_{-1}^{1}xe^{-jn\omega_{0}x} \, dx} \\
 &= \frac{1}{2} \sbrak{\frac{-1}{jn\omega_{0}}\sbrak{-2 +e^{+jn\omega_{0}} + e^{-jn\omega_{0}}} +\brak{\frac{e^{-jn\omega_{0}x}}{jn\omega_{0}}\sbrak{x + \frac{1}{jn\omega_{0}}}}_{-1}^{1}} \\
-&= \frac{-1}{jn\omega_{0}}\sbrak{-1 + cos(n\omega_{0})} + \frac{1}{2(jn\omega_{0})^2}\sbrak{\brak{e^{-jn\omega_{0}}  }\brak{1+jn\omega_{0}}- \brak{e^{jn\omega_{0}} }\brak{-jn\omega_{0}+1}} \\
-\implies C_{n}&= \frac{-1}{(jn\omega_{0})^2}\sbrak{-jn\omega_{0} + j sin(n\omega_{0})}
+&= \frac{-1}{jn\omega_{0}}\sbrak{-1 + \cos(n\omega_{0})} + \frac{1}{2(jn\omega_{0})^2}\sbrak{\brak{e^{-jn\omega_{0}}  }\brak{1+jn\omega_{0}}- \brak{e^{jn\omega_{0}} }\brak{-jn\omega_{0}+1}} \\
+\implies c_{n}&= \frac{-1}{(jn\omega_{0})^2}\sbrak{-jn\omega_{0} + j \sin(n\omega_{0})}
 \end{align} 
 
+For $n=0$;
 \begin{align}
-a_n &= C_{n} + C_{-n} \\
-&= 0 \\
-b_n &= C_{n} - C_{-n} \\
-&= \frac{-2}{(jn\omega_{0})^2}\sbrak{-jn\omega_{0} + j sin(n\omega_{0})} 
+c_{0} &= \frac{1}{2} \int_{-1}^{1} f(x) \, dx \\
+&=  \frac{1}{2} \sbrak {\int_{-1}^{0} \brak{-1-x} \, dx + \int_{0}^{1} \brak{1-x} \, dx } \\
+&= \frac{1}{2} \sbrak{ \brak{-x-\frac{x^2}{2}}_{-1}^{0} + \brak{x-\frac{x^2}{2}}_{0}^{1}} \\
+&= \frac{1}{2} \sbrak{0-1+\frac{1}{2} +1 -\frac{1}{2} -0} \\
+&= 0
 \end{align}
 
- $\therefore$ The Fourier series of this function contains only $sin(n\pi x)$ where n=1,2,3...
+
+The trigonometric Fourier Series of $f\brak{x}$ is,
+\begin{align}
+    f\brak{x}=a_0+\sum_{n=1}^{\infty}\cbrak{a_n\cos\brak{n\omega_{0}x}+b_n\sin\brak{n\omega_{0}x}}
+\end{align}
+
+Finding the Fourier Coefficient $a_0$,
+\begin{align}
+    a_0&=c_0\\
+    \implies a_0&= 0
+\end{align}
+
+Finding the Fourier Coefficients $a_n$,
+\begin{align}
+    a_n&=\frac{2}{T}\int_{\frac{-T}{2}}^{\frac{T}{2}}f(x)\cos\brak{n\omega_{0}x}\;dx, n \geq 0 \\
+    &= \frac{1}{T}\int_{\frac{-T}{2}}^{\frac{T}{2}}f(x)\brak{e^{-jn\omega_{0}x}+e^{jn\omega_{0}x}} \; dx \\
+ \implies a_n   &= c_{n} + c_{-n} \\
+ \implies a_n&= 0 \\
+\end{align}  
+  
+Finding the Fourier Coefficients $b_n$,
+\begin{align}
+    b_n&=\frac{2}{T}\int_{\frac{-T}{2}}^{\frac{T}{2}}f(x)\sin\brak{n\omega_{0}x}\;dx, n \geq 0 \\
+    &= \frac{1}{T}\int_{\frac{-T}{2}}^{\frac{T}{2}}f(x)j\brak{e^{-jn\omega_{0}x}-e^{jn\omega_{0}x}} \; dx \\
+   \implies b_n &= j\brak{c_{n} - c_{-n}} \\
+   \implies b_n&= \frac{-2}{(n\omega_{0})^2}\sbrak{-n\omega_{0} +  \sin(n\omega_{0})} 
+\end{align}  
+
+ $\therefore$ The Fourier series of this function contains only $\sin(n\pi x)$ where n=1,2,3...
+ 
+ \begin{figure}[!ht]
+    \centering
+     \includegraphics[width=\columnwidth]{./figs/f.png}
+    \caption{}    
+    \label{fig:ishitha.g22.in.13.f1}
+\end{figure}
  
 
 \end{document}
