@@ -144,7 +144,7 @@ Q: A periodic function $f(x)$, with period 2, is defined as \\
 
 The complex exponential Fourier Series of $f\brak{x}$ is,
 \begin{align}
-    f\brak{x}&=\sum_{n=-\infty}^{\infty}c(n)e^{jn \omega x}\\
+    f\brak{x}&=\sum_{n=-\infty}^{\infty}c(n)e^{jn\omega x}\\
     \implies c(n)&=\frac{1}{2L}\int_{-L}^{L}f\brak{x}e^{-jn\omega x}\;dx\\
 \end{align}    
 
@@ -152,11 +152,11 @@ For $n\neq 0$;
 \begin{align}
 c(n) &= \frac{1}{2} \int_{-1}^{1} f(x) e^{-jn\omega x} \, dx \\
 &= \frac{1}{2} \brak{ \int_{-1}^{0}\brak{-1-x}e^{-jn\omega x} \, dx +  \int_{0}^{1}\brak{+1-x}e^{-jn\omega x} \, dx } \\
-&= \frac{1}{2} \brak{-\int_{-1}^{0}e^{-jn\omega x} \, dx-\int_{-1}^{1}xe^{-jn\omega x} \, dx + \int_{0}^{1}e^{-jn\omega x} \, dx} \\
-&= \frac{1}{2} \sbrak{\frac{-1}{jn\omega}\sbrak{-\brak{1 - e^{+jn\omega}} + \brak{e^{-jn\omega} -1}} -\int_{-1}^{1}xe^{-jn\omega x} \, dx} \\
-&= \frac{1}{2} \sbrak{\frac{-1}{jn\omega}\sbrak{-2 +e^{+jn\omega} + e^{-jn\omega}} +\brak{\frac{e^{-jn\omega x}}{jn\omega}\sbrak{x + \frac{1}{jn\omega}}}_{-1}^{1}} \\
-&= \frac{-1}{jn\omega}\sbrak{-1 + \cos(n\omega)} + \frac{1}{2(jn\omega)^2}\sbrak{\brak{e^{-jn\omega}  }\brak{1+jn\omega}- \brak{e^{jn\omega} }\brak{-jn\omega+1}} \\
-\implies c(n)&= \frac{j}{(n\omega)^2}\sbrak{-n\omega +  \sin(n\omega)}
+&= \frac{1}{2} \brak{-\int_{-1}^{0}e^{-jn\omega x} \, dx -\int_{-1}^{1}xe^{-jn\omega x} \, dx + \int_{0}^{1}e^{-jn\omega x} \, dx} \\
+&= \frac{1}{2} \sbrak{\frac{-1}{jn\omega }\sbrak{-\brak{1 - e^{+jn\omega }} + \brak{e^{-jn\omega } -1}} -\int_{-1}^{1}xe^{-jn\omega x} \, dx} \\
+&= \frac{1}{2} \sbrak{\frac{-1}{jn\omega }\sbrak{-2 +e^{+jn\omega } + e^{-jn\omega }} +\brak{\frac{e^{-jn\omega x}}{jn\omega }\sbrak{x + \frac{1}{jn\omega }}}_{-1}^{1}} \\
+&= \frac{-1}{jn\omega }\sbrak{-1 + \cos(n\omega )} + \frac{1}{2(jn\omega )^2}\sbrak{\brak{e^{-jn\omega }}\brak{1+jn\omega }- \brak{e^{jn\omega } }\brak{-jn\omega +1}} \\
+\implies c\brak{n}&= \frac{-1}{(jn\omega )^2}\sbrak{-jn\omega  + j \sin(n\omega )}
 \end{align} 
 
 For $n=0$;
@@ -165,9 +165,44 @@ c(0) &= \frac{1}{2} \int_{-1}^{1} f(x) \, dx \\
 &=  \frac{1}{2} \sbrak {\int_{-1}^{0} \brak{-1-x} \, dx + \int_{0}^{1} \brak{1-x} \, dx } \\
 &= \frac{1}{2} \sbrak{ \brak{-x-\frac{x^2}{2}}_{-1}^{0} + \brak{x-\frac{x^2}{2}}_{0}^{1}} \\
 &= \frac{1}{2} \sbrak{0-1+\frac{1}{2} +1 -\frac{1}{2} -0} \\
-&= 0
+\implies c(0)&= 0
 \end{align}
 
+
+The trigonometric Fourier Series of $f\brak{x}$ is,
+\begin{align}
+    f\brak{x}=a(0)+\sum_{n=1}^{\infty}\cbrak{a(n)\cos\brak{n\omega x}+b(n)\sin\brak{n\omega x}}
+\end{align}
+
+Finding the Fourier Coefficient $a_0$,
+\begin{align}
+    a(0)&=c(0)\\
+    \implies a(0)&= 0
+\end{align}
+
+Finding the Fourier Coefficients $a(n)$,
+\begin{align}
+    a(n)&=\frac{1}{L}\int_{-L}^{L}f(x)\cos\brak{n\omega x}\;dx, n \geq 0 \\
+    &= \frac{1}{L}\int_{-L}^{L}f(x)\brak{e^{-jn\omega x}+e^{jn\omega x}} \; dx \\
+ \implies a(n)   &= c(n) + c(-n) \\
+ \implies a(n)&= 0 \\
+\end{align}  
+  
+Finding the Fourier Coefficients $b(n)$,
+\begin{align}
+    b_n&=\frac{1}{L}\int_{-L}^{L}f(x)\sin\brak{n\omega x}\;dx, n \geq 0 \\
+    &= \frac{1}{L}\int_{-L}^{L}f(x)j\brak{e^{-jn\omega x}-e^{jn\omega x}} \; dx \\
+   \implies b(n) &= j\brak{c_{n} - c_{-n}} \\
+   \implies b(n)&= \frac{-2}{(n\omega )^2}\sbrak{-n\omega +  \sin(n\omega)} 
+\end{align}  
+
+$\implies$ The trigonometric Fourier Series of $f\brak{x}$ is,
+\begin{align}
+ f\brak{x} &=\sum_{n=1}^{\infty}\cbrak{0+ 0 +b(n)\sin\brak{n\omega x}} \\
+ f\brak{x} &=\sum_{n=1}^{\infty}\cbrak{\frac{-2}{(n\omega )^2}\sbrak{-n\omega +  \sin(n\omega)} \sin\brak{n\omega x}} \\
+ f\brak{x} &=\sum_{n=1}^{\infty}\cbrak{\frac{-2}{(n\pi )^2}\sbrak{-n\pi +  \sin(n\pi)} \sin\brak{n\pi x}} \\
+  f\brak{x} &=\sum_{n=1}^{\infty}\cbrak{\frac{2}{n\pi } \sin\brak{n\pi x}}
+ \end{align}
 
  $\therefore$ The Fourier series of this function contains only $\sin(n\pi x)$ where n=1,2,3...
  
