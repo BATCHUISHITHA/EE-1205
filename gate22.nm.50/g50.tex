@@ -1,6 +1,6 @@
 \let\negmedspace\undefined
 \let\negthickspace\undefined
-\documentclass[journal,12pt,onecolumn]{IEEEtran}
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
 \usepackage{algorithmic}
@@ -125,25 +125,27 @@ Then $y(1)$ is \underline{\hspace{2.5cm}}  (rounded off to nearest integer).    
 \solution
 \begin{table}[!ht]    
     \centering
-    \input{tables/table.tex}
+    \resizebox{9cm}{1cm}{
+        \input{tables/table.tex} 
+    }
     \caption{Input Parameters}
     \label{table:ishitha.g22.nm.50.t1}
 \end{table}
 
 \begin{equation}
-\mathcal{L}\brak{y^{''}(x)} = s^{2}Y(s)-sy(0)-y^{'}(0) \\ \label{eq:ishitha.g22.nm.50.1.eq}
+y^{''}(x) \xleftrightarrow{\mathcal{L}}   s^{2}Y(s)-sy(0)-y^{'}(0) \\ \label{eq:ishitha.g22.nm.50.1.eq}
 \end{equation}
 
 \begin{equation}
-\mathcal{L}\brak{y^{'}(x)}  = sY(s)-y(0) \\ \label{eq:ishitha.g22.nm.50.2.eq}
+y^{'}(x)  \xleftrightarrow{\mathcal{L}}   sY(s)-y(0) \\ \label{eq:ishitha.g22.nm.50.2.eq}
 \end{equation}
 
 \begin{equation}
-\mathcal{L}\brak{y(x)}      = Y(s) \\ \label{eq:ishitha.g22.nm.50.3.eq}
+y(x)     \xleftrightarrow{\mathcal{L}}   Y(s) \\ \label{eq:ishitha.g22.nm.50.3.eq}
 \end{equation}
 
 \begin{equation}
-\mathcal{L}\brak{e^{ax}}    = \frac{1}{s-a} \\ \label{eq:ishitha.g22.nm.50.4.eq}
+e^{ax}    \xleftrightarrow {\mathcal{L}} \frac{1}{s-a} \\ \label{eq:ishitha.g22.nm.50.4.eq}
 \end{equation}
 
 Applying Laplace transform on both sides of the given differential equation,
@@ -154,28 +156,33 @@ Applying Laplace transform on both sides of the given differential equation,
 
 From ~\eqref{eq:ishitha.g22.nm.50.1.eq},~\eqref{eq:ishitha.g22.nm.50.2.eq},~\eqref{eq:ishitha.g22.nm.50.3.eq},~\eqref{eq:ishitha.g22.nm.50.4.eq}
 \begin{align}
-\brak{s^{2}Y(s)-sy(0)-y^{'}(0)} - 4\brak{sY(s)-y(0)}- 12\brak{Y(s)} &= \frac{3}{s-5} \\
-Y(s)\brak{s^{2}-4s-12} -y(0)\brak{s-4} -y^{'}(0) &= \frac{3}{s-5} \\
-Y(s)\brak{s^{2}-4s-12} - \frac{18\brak{s-4}}{7} -\frac{-1}{7} &= \frac{3}{(s-5)} \\
-Y(s)\brak{s^{2}-4s-12} - \frac{\brak{18s -73 }}{7}  &= \frac{3}{(s-5)} 
-\end{align}
-
-\begin{align}
-Y(s) &= \frac{3}{(s-5)\brak{s^{2}-4s-12}} + \frac{\brak{18s -73 }}{7\brak{s^{2}-4s-12} } \\
-&= \frac{3}{8\brak{s-6}} -\frac{3}{7\brak{s-5}} +\frac{3}{56\brak{s+2}} +\frac{5}{8\brak{s-6}} +\frac{109}{56\brak{s+2}}  \\
-\implies Y(s)&= \frac{1}{\brak{s-6}} -\frac{3}{7\brak{s-5}} + \frac{1}{\brak{s+2}} 
+Y(s)\brak{s^{2}-4s-12} -y(0)\brak{s-4} \nonumber \\-y^{'}(0) &= \frac{3}{s-5} \\
+Y(s)\brak{s^{2}-4s-12} - \frac{\brak{18s -73 }}{7}  &=\frac{3}{(s-5)} \\
+Y(s) = \frac{3}{(s-5)\brak{s^{2}-4s-12}} &+ \frac{\brak{18s -73 }}{7\brak{s^{2}-4s-12} } 
 \end{align}
 
 \begin{equation}
-\mathcal{L}^{-1}\brak{\frac{1}{\brak{s-a}}} = e^{ax} \\ \label{eq:ishitha.g22.nm.50.5.eq}
+\implies Y(s) = \frac{1}{\brak{s-6}} -\frac{3}{7\brak{s-5}} + \frac{1}{\brak{s+2}} \\ \label{eq:ishitha.g22.nm.50.5.eq}
 \end{equation}
 
-Now finding Inverse Laplace Transform of Y(s),
-From ~\eqref{eq:ishitha.g22.nm.50.5.eq}
+
+\begin{equation}
+\frac{1}{s-a}   \xleftrightarrow {\mathcal{L}^{-1}} e^{ax}  \\ \label{eq:ishitha.g22.nm.50.6.eq}
+\end{equation}
+Now finding Inverse Laplace Transform on both sides of ~\eqref{eq:ishitha.g22.nm.50.5.eq} ,
+
 \begin{align}
 y(x)&=\mathcal{L}^{-1}\brak{\frac{1}{\brak{s-6}} -\frac{3}{7\brak{s-5}} + \frac{2}{\brak{s+2}} } \\
-&= \mathcal{L}^{-1}\brak{\frac{1}{s-6}} - \mathcal{L}^{-1}\brak{\frac{3}{7\brak{s-5}}} +\mathcal{L}^{-1}\brak{\frac{2}{s+2}} \\
-\implies y(x) &= e^{6x} -\frac{3}{7}e^{5x} + 2e^{-2x}
+&= \mathcal{L}^{-1}\brak{\frac{1}{s-6}} - \mathcal{L}^{-1}\brak{\frac{3}{7\brak{s-5}}} +\mathcal{L}^{-1}\brak{\frac{2}{s+2}} 
+\end{align}
+From ~\eqref{eq:ishitha.g22.nm.50.6.eq}
+\begin{align}
+\implies y(x) &= \brak{e^{6x} -\frac{3}{7}e^{5x} + 2e^{-2x}}u(x)
+\end{align}
+
+\begin{align}
+\implies y(1) &= e^{6} -\frac{3}{7}e^{5} + 2e^{-2} \\
+\therefore y(1) &= 340
 \end{align}
 
 \begin{figure}[!ht]
