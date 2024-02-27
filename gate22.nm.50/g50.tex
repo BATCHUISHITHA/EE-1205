@@ -123,7 +123,8 @@
 
 Q:  Let $y(x)$ be the solution of the differential equation 
 \begin{align}
-y^{''} - 4y^{'} -12y &= 3e^{5x}
+y^{''} - 4y^{'} -12y &= 3e^{5x} 
+ \label{eq:ishitha.g22.nm.50.1.eq}
 \end{align}
 satisfying $y(0)=\frac{18}{7}$ and $y^{'}(0)=\frac{-1}{7}$. \\
 Then $y(1)$ is \underline{\hspace{2.5cm}}  (rounded off to nearest integer).      \hfill{GATE NM 2022 }
@@ -139,27 +140,27 @@ Then $y(1)$ is \underline{\hspace{2.5cm}}  (rounded off to nearest integer).    
 \end{table}
 
 \begin{equation}
-y^{''}(t) \system{} s^{2}Y(s)-sy(0)-y^{'}(0) \\ \label{eq:ishitha.g22.nm.50.1.eq}
+y^{''}(t) \system{} s^{2}Y(s)-sy(0)-y^{'}(0) \\ \label{eq:ishitha.g22.nm.50.2.eq}
 \end{equation}
 
 \begin{equation}
-y^{'}(t)  \system{} sY(s)-y(0) \\ \label{eq:ishitha.g22.nm.50.2.eq}
+y^{'}(t)  \system{} sY(s)-y(0) \\ \label{eq:ishitha.g22.nm.50.3.eq}
 \end{equation}
 
 \begin{equation}
-y(t)     \system{}   Y(s) \\ \label{eq:ishitha.g22.nm.50.3.eq}
+y(t)     \system{}   Y(s) \\ \label{eq:ishitha.g22.nm.50.4.eq}
 \end{equation}
 
 \begin{equation}
-e^{at}   \system{}  \frac{1}{s-a} \\ \label{eq:ishitha.g22.nm.50.4.eq}
+e^{at}   \system{}  \frac{1}{s-a} \\ \label{eq:ishitha.g22.nm.50.5.eq}
 \end{equation}
 
-Applying Laplace transform on both sides of the given differential equation,
+Applying Laplace transform on both sides of  ~\eqref{eq:ishitha.g22.nm.50.1.eq},
 \begin{align}
 \mathcal{L}\brak{y^{''}(t) - 4y^{'}(t) -12y(t)}&=\mathcal{L}\brak{3e^{5x}}
 \end{align}
 
-From ~\eqref{eq:ishitha.g22.nm.50.1.eq},~\eqref{eq:ishitha.g22.nm.50.2.eq},~\eqref{eq:ishitha.g22.nm.50.3.eq},~\eqref{eq:ishitha.g22.nm.50.4.eq}
+From ~\eqref{eq:ishitha.g22.nm.50.2.eq},~\eqref{eq:ishitha.g22.nm.50.3.eq},~\eqref{eq:ishitha.g22.nm.50.4.eq},~\eqref{eq:ishitha.g22.nm.50.5.eq}
 \begin{align}
 Y(s)\brak{s^{2}-4s-12} -y(0)\brak{s-4} \nonumber \\-y^{'}(0) &= \frac{3}{s-5} \\
 Y(s)\brak{s^{2}-4s-12} - \frac{\brak{18s -73 }}{7}  &=\frac{3}{(s-5)} \\
@@ -167,16 +168,16 @@ Y(s) = \frac{3}{(s-5)\brak{s^{2}-4s-12}} &+ \frac{\brak{18s -73 }}{7\brak{s^{2}-
 \end{align}
 
 \begin{equation}
-\implies Y(s) = \frac{1}{\brak{s-6}} -\frac{3}{7\brak{s-5}} + \frac{1}{\brak{s+2}} \\ \label{eq:ishitha.g22.nm.50.5.eq}
+\implies Y(s) = \frac{1}{\brak{s-6}} -\frac{3}{7\brak{s-5}} + \frac{1}{\brak{s+2}} \\ \label{eq:ishitha.g22.nm.50.6.eq}
 \end{equation}
 
 
 \begin{equation}
-\frac{1}{s-a}   \systeminv{}  e^{at}  \\ \label{eq:ishitha.g22.nm.50.6.eq}
+\frac{1}{s-a}   \systeminv{}  e^{at}  \\ \label{eq:ishitha.g22.nm.50.7.eq}
 \end{equation}
-Now finding Inverse Laplace Transform on both sides of ~\eqref{eq:ishitha.g22.nm.50.5.eq} ,
+Now finding Inverse Laplace Transform on both sides of ~\eqref{eq:ishitha.g22.nm.50.6.eq} ,
 
-From ~\eqref{eq:ishitha.g22.nm.50.6.eq}
+From ~\eqref{eq:ishitha.g22.nm.50.7.eq}
 \begin{align}
 \implies y(t) &= \brak{e^{6t} -\frac{3}{7}e^{5t} + 2e^{-2t}}u(t)
 \end{align}
