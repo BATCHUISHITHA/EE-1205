@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <math.h>
 
-void linespace(float start, float stop, float step, float* x_values, double* y_values, int num_values) {
+void linespace(float start, float stop, float step, float* t_values, double* y_values, int num_values) {
     for (int i = 0; i < num_values; ++i) {
-        x_values[i] = start + i * step;
-        y_values[i] =   exp(6 * x_values[i]) - 3*(exp(5 * x_values[i]))/7 + (2*exp(-2 * x_values[i]));
+        t_values[i] = start + i * step;
+        y_values[i] =   exp(6 * t_values[i]) - 3*(exp(5 * t_values[i]))/7 + (2*exp(-2 * t_values[i]));
     }
 }
 
@@ -18,11 +18,11 @@ int main() {
     int num_values = (stop - start) / step + 1;
 
     // Allocate arrays to store the generated values
-    float x_values[num_values];
+    float t_values[num_values];
     double y_values[num_values];
 
     // Call the linespace function
-    linespace(start, stop, step, x_values, y_values, num_values);
+    linespace(start, stop, step, t_values, y_values, num_values);
 
     // Save data to a file
     FILE* file = fopen("output.dat", "w");
@@ -30,7 +30,7 @@ int main() {
   
     if (file != NULL) {
         for (int i = 0; i < num_values; ++i) {
-            fprintf(file, "%.6f %.8lf\n", x_values[i], y_values[i]);
+            fprintf(file, "%.6f %.8lf\n", t_values[i], y_values[i]);
         }
 
         fclose(file);
