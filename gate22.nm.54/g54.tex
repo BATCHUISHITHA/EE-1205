@@ -154,6 +154,18 @@ m_1\ddot{x_1}(t) + k_2\brak{\ddot{x_2}(t)-\ddot{x_1}(t)}+ k_1\ddot{x_1}(t)&=0
 Substituting  ~\eqref{eq:ishitha.g22.nm.54.1.eq} in  ~\eqref{eq:ishitha.g22.nm.54.2.eq}
 \begin{align}
 \ddddot{x_1}(t) + 2\ddot{x_1}(t) + x_1(t) &= 0 
+\label{eq:ishitha.g22.nm.54.3.eq}
+\end{align}
+
+Applying Laplace transform on both sides of ~\eqref{eq:ishitha.g22.nm.54.3.eq}
+\begin{align}
+\mathcal{L}\brak{\ddddot{x_1}(t) + 2\ddot{x_1}(t) + x_1(t)} &= 0 \\
+X_1(s)\brak{s^4 - s^3 x_1(0) - s^2 \dot{x_1}(0) -s\ddot{x_1}(0)-\dddot{x_1}(0)} &+\nonumber \\ 2X_1(s)\brak{s^2-sx_1(0)-\dot{x_1}(0)} + X_1(s) =0
+\end{align}
+let $x_1(t)$ be constant at t=0
+\begin{align}
+X_1(s)\brak{s^4 - s^3 x_1(0) - s^2 \dot{x_1}(0)} &+\nonumber \\ 2X_1(s)\brak{s^2-sx_1(0)} + X_1(s) =0\\
+X_1(s)\brak{s^4 -\brak{s^3+2s}x_1(0) - s^2 \brak{\dot{x_1}(0)-2}  +1}&=0
 \end{align}
 
 \end{document}
