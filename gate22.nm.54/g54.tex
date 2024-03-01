@@ -140,32 +140,37 @@ Q: A system with two degrees of freedom, as shown in the figure, has masses $m_1
 \end{figure} 
 
 \begin{align}
-m_2\ddot{x_2}(t) + k_2\brak{\ddot{x_2}(t)-\ddot{x_1}(t)}&=0 \\
-m_1\ddot{x_1}(t) + k_2\brak{\ddot{x_2}(t)-\ddot{x_1}(t)}+ k_1\ddot{x_1}(t)&=0
+m_2\ddot{x_2}(t) + k_2\brak{x_2(t)-x_1(t)}&=0 \\
+m_1\ddot{x_1}(t) - k_2\brak{x_2(t)-x_1(t)}+ k_1x_1(t)&=0
 \end{align}
 
 \begin{align}
-\ddot{x_1}(t) + x_2(t) &=0 
-\label{eq:ishitha.g22.nm.54.1.eq}\\
 \ddot{x_2}(t) + 2\brak{x_2(t)-x_1(t)} &= 0 
+\label{eq:ishitha.g22.nm.54.1.eq} \\
+\ddot{x_1}(t) +2x_1(t)- x_2(t) &=0 
 \label{eq:ishitha.g22.nm.54.2.eq}
 \end{align}
 
 Substituting  ~\eqref{eq:ishitha.g22.nm.54.1.eq} in  ~\eqref{eq:ishitha.g22.nm.54.2.eq}
 \begin{align}
-\ddddot{x_1}(t) + 2\ddot{x_1}(t) + x_1(t) &= 0 
+\ddddot{x_2}(t) + 4\ddot{x_2}(t) + 2x_2(t) &= 0 
 \label{eq:ishitha.g22.nm.54.3.eq}
 \end{align}
 
 Applying Laplace transform on both sides of ~\eqref{eq:ishitha.g22.nm.54.3.eq}
 \begin{align}
-\mathcal{L}\brak{\ddddot{x_1}(t) + 2\ddot{x_1}(t) + x_1(t)} &= 0 \\
-X_1(s)\brak{s^4 - s^3 x_1(0) - s^2 \dot{x_1}(0) -s\ddot{x_1}(0)-\dddot{x_1}(0)} &+\nonumber \\ 2X_1(s)\brak{s^2-sx_1(0)-\dot{x_1}(0)} + X_1(s) =0
+\mathcal{L}\brak{\ddddot{x_2}(t) + 4\ddot{x_2}(t) + 2x_2(t)} &= 0 \\
+X_2(s)\brak{s^4 - s^3 x_2(0) - s^2 \dot{x_2}(0) -s\ddot{x_2}(0)-\dddot{x_2}(0)} &+\nonumber \\ 4X_1(s)\brak{s^2-sx_2(0)-\dot{x_2}(0)} + 2X_2(s) =0
 \end{align}
-let $x_1(t)$ be constant at t=0
+
 \begin{align}
-X_1(s)\brak{s^4 - s^3 x_1(0) - s^2 \dot{x_1}(0)} &+\nonumber \\ 2X_1(s)\brak{s^2-sx_1(0)} + X_1(s) =0\\
-X_1(s)\brak{s^4 -\brak{s^3+2s}x_1(0) - s^2 \brak{\dot{x_1}(0)-2}  +1}&=0
+X_2(s)\brak{s^4 - s^3 x_2(0) - s^2 \dot{x_2}(0)} &+\nonumber \\ 4X_2(s)\brak{s^2-sx_1(0)} + 2X_2(s) =0\\
+X_2(s)\brak{s^4 -\brak{s^3+4s}x_2(0) - s^2 \brak{\dot{x_2}(0)-4}  +2}&=0
+\end{align}
+
+let $x_2(t)$ be constant at t=0
+\begin{align}
+\implies X_2(s)(s^4+2)&= 0
 \end{align}
 
 \end{document}
