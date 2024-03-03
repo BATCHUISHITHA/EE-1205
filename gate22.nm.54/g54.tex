@@ -122,7 +122,7 @@
 %\renewcommand{\theequation}{\theenumi}
 
 Q: A system with two degrees of freedom, as shown in the figure, has masses $m_1=200kg$ and $m_2=100kg$ and stiffness coefficients $k_1=k_2=200N/m$. Then the lowest natural frequency of the system is  \underline{\hspace{2.5cm}} rad/s (rounded off to one decimal place).    
-\begin{figure}[h]
+\begin{figure}[!ht]
     \centering
     \includegraphics[width=\columnwidth]{figs/g54.fig1.png}
     \caption{ }
@@ -132,62 +132,52 @@ Q: A system with two degrees of freedom, as shown in the figure, has masses $m_1
 
 \solution
 
-\begin{figure}[h]
+\begin{figure}[!ht]
     \centering
     \includegraphics[width=\columnwidth]{figs/g54.fig2.jpeg}
     \caption{ }
     \label{}
 \end{figure} 
 
-\begin{align}
-m_2\ddot{x_2}(t) + k_2\brak{x_2(t)-x_1(t)}&=0 \\
-m_1\ddot{x_1}(t) - k_2\brak{x_2(t)-x_1(t)}+ k_1x_1(t)&=0
-\end{align}
+\begin{table}[!ht]    
+    \centering
+    \resizebox{9cm}{2cm}{
+        \input{tables/tableg54.tex} 
+    }
+    \caption{Input Parameters}
+    \label{table:ishitha.g22.nm.54.t1}
+\end{table}
+
 
 \begin{align}
-\ddot{x_2}(t) + 2\brak{x_2(t)-x_1(t)} &= 0 
+m_2\ddot{x_2}(t) + k_2\brak{x_2(t)-x_1(t)}&=0
 \label{eq:ishitha.g22.nm.54.1.eq} \\
-\ddot{x_1}(t) +2x_1(t)- x_2(t) &=0 
+m_1\ddot{x_1}(t) - k_2\brak{x_2(t)-x_1(t)}+ k_1x_1(t)&=0
 \label{eq:ishitha.g22.nm.54.2.eq}
 \end{align}
 
-Substituting  ~\eqref{eq:ishitha.g22.nm.54.1.eq} in  ~\eqref{eq:ishitha.g22.nm.54.2.eq}
+
+Applying Laplace transform for ~\eqref{eq:ishitha.g22.nm.54.1.eq} and ~\eqref{eq:ishitha.g22.nm.54.2.eq}
 \begin{align}
-\ddddot{x_2}(t) + 4\ddot{x_2}(t) + 2x_2(t) &= 0 
-\label{eq:ishitha.g22.nm.54.3.eq}
+m_2s^2X_2(s) + k_2\brak{X_2(s)-X_1(s)}&=0
+\label{eq:ishitha.g22.nm.54.3.eq} \\
+m_1s^2X_1(s) - k_2\brak{X_2(s)-X_1(s)} + k_1X_1(s) &= 0
+\label{eq:ishitha.g22.nm.54.4.eq} 
 \end{align}
 
-Applying Laplace transform on both sides of ~\eqref{eq:ishitha.g22.nm.54.3.eq}
+Equating Transfer function from ~\eqref{eq:ishitha.g22.nm.54.3.eq} and ~\eqref{eq:ishitha.g22.nm.54.4.eq}
 \begin{align}
-\mathcal{L}\brak{\ddddot{x_2}(t) + 4\ddot{x_2}(t) + 2x_2(t)} &= 0 \\
-X_2(s)s^4 - s^3 x_2(0) - s^2 \dot{x_2}(0) -s\ddot{x_2}(0)-\dddot{x_2}(0) &+\nonumber \\ 4\brak{X_2(s)s^2-sx_2(0)-\dot{x_2}(0)} + 2X_2(s) =0
+\frac{m_2s^2+k_2}{k_2}&=\frac{k_2}{m_1s^2+k_1+k_2} \\
+\frac{100s^2+200}{200}&=\frac{200}{200s^2+200+200}\\
+\implies \brak{s^2+2}^2 &= 2 
+\label{eq:ishitha.g22.nm.54.5.eq} 
 \end{align}
+  
+ Substituting $s$ as $j\omega$ in ~\eqref{eq:ishitha.g22.nm.54.5.eq}
+ \begin{align}
+ \brak{2-\omega ^2}^2 &=2 \\
+ \omega &= \sqrt{2-\sqrt{2}} \\
+ \implies \omega &= 0.766 rad/sec
+ \end{align}
 
-\begin{align}
-X_2(s)s^4 - s^3 x_2(0) - s^2 \dot{x_2}(0)-s\ddot{x_2}(0) &+\nonumber \\ 4\brak{X_2(s)s^2-sx_2(0)-\dot{x_2}(0)} +  2X_2(s) =0\\
-X_2(s)\brak{s^4 + 4s^2 +2}  - s^3 x_2(0) -  s^2\dot{x_2}(0)&- \nonumber \\s\ddot{x_2}(0) -4sx_2(0)-4\dot{x_2}(0)=0
-\end{align}
-
-Assuming  $x_2(t) = 0$ and $\ddot x_2(t) = 0$  at t=0
-\begin{align}
-X_2(s)\brak{s^4 + 4s^2 +2}-  s^2\dot{x_2}(0) -4\dot{x_2}(0) &= 0 \\
-X_2(s) = \dot{x_2}(0)\frac{\brak{s^2+4}}{\brak{s^4 + 4s^2 +2}} 
-\end{align}
-
-
-\begin{align}
-X_2(s) &= \dot{x_2}(0)\frac{\brak{s^2+4}}{\brak{s^2 +(2+\sqrt{2})}\brak{s^2 +(2-\sqrt{2})}} \\
-\implies X_2(s) &= \dot{x_2}(0)\brak{\brak{\frac{1-\sqrt{2}}{2\brak{s^2 +(2+\sqrt{2})}}}+\brak{\frac{1+\sqrt{2}}{2\brak{s^2+(2-\sqrt{2})}}}}
-\label{eq:ishitha.g22.nm.54.4.eq}
-\end{align}
-
-\begin{equation}
-\frac{a}{s^2+a^2} \systemLinv{} sinat
-\end{equation}
-
-Applying Inverse Laplace Transform on both sides of ~\eqref{eq:ishitha.g22.nm.54.4.eq}
-\begin{align}
-x_2(t) &=  \dot{x_2}(0)\brak{\frac{\brak{1-\sqrt{2}}\sin{(2+\sqrt{2})}t}{2\brak{(2+\sqrt{2})}} + \frac{\brak{1+\sqrt{2}}\sin{(2-\sqrt{2})}t}{2\brak{(2-\sqrt{2})}}} \\
-&= \frac{3}{\sqrt{2}}\brak{-\cos{2t}\sin{\sqrt{2}t} + \sqrt{2}\sin{2t}cos{\sqrt{2}t}}
-\end{align}
 \end{document}
