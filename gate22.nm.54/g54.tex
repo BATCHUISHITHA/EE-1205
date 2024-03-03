@@ -83,8 +83,8 @@
 \providecommand{\diff}[2]{\ensuremath{\frac{d{#1}}{d{#2}}}}
 \providecommand{\myceil}[1]{\left \lceil #1 \right \rceil }
 \newcommand\figref{Fig.~\ref}
-\newcommand{\system}[1]{\stackrel{#1}{\xleftrightarrow{\mathcal{L}}}}
-\newcommand{\systeminv}[1]{\stackrel{#1}{\xleftrightarrow{\mathcal{L}^{-1}}}}
+\newcommand{\systemL}[1]{\stackrel{#1}{\xleftrightarrow{\mathcal{L}}}}
+\newcommand{\systemLinv}[1]{\stackrel{#1}{\xleftrightarrow{\mathcal{L}^{-1}}}}
 
 
 \newcommand\tabref{Table~\ref}
@@ -160,17 +160,34 @@ Substituting  ~\eqref{eq:ishitha.g22.nm.54.1.eq} in  ~\eqref{eq:ishitha.g22.nm.5
 Applying Laplace transform on both sides of ~\eqref{eq:ishitha.g22.nm.54.3.eq}
 \begin{align}
 \mathcal{L}\brak{\ddddot{x_2}(t) + 4\ddot{x_2}(t) + 2x_2(t)} &= 0 \\
-X_2(s)\brak{s^4 - s^3 x_2(0) - s^2 \dot{x_2}(0) -s\ddot{x_2}(0)-\dddot{x_2}(0)} &+\nonumber \\ 4X_2(s)\brak{s^2-sx_2(0)-\dot{x_2}(0)} + 2X_2(s) =0
+X_2(s)s^4 - s^3 x_2(0) - s^2 \dot{x_2}(0) -s\ddot{x_2}(0)-\dddot{x_2}(0) &+\nonumber \\ 4\brak{X_2(s)s^2-sx_2(0)-\dot{x_2}(0)} + 2X_2(s) =0
 \end{align}
 
 \begin{align}
-X_2(s)\brak{s^4 - s^3 x_2(0) - s^2 \dot{x_2}(0)} &+\nonumber \\ 4X_2(s)\brak{s^2-sx_2(0)} + 2X_2(s) =0\\
-X_2(s)\brak{s^4 -\brak{s^3+4s}x_2(0) - s^2 \brak{\dot{x_2}(0)-4}  +2}&=0
+X_2(s)s^4 - s^3 x_2(0) - s^2 \dot{x_2}(0)-s\ddot{x_2}(0) &+\nonumber \\ 4\brak{X_2(s)s^2-sx_2(0)-\dot{x_2}(0)} +  2X_2(s) =0\\
+X_2(s)\brak{s^4 + 4s^2 +2}  - s^3 x_2(0) -  s^2\dot{x_2}(0)&- \nonumber \\s\ddot{x_2}(0) -4sx_2(0)-4\dot{x_2}(0)=0
 \end{align}
 
-let $x_2(t)$ be constant at t=0
+Assuming  $x_2(t) = 0$ and $\ddot x_2(t) = 0$  at t=0
 \begin{align}
-\implies X_2(s)(s^4+2)&= 0
+X_2(s)\brak{s^4 + 4s^2 +2}-  s^2\dot{x_2}(0) -4\dot{x_2}(0) &= 0 \\
+X_2(s) = \dot{x_2}(0)\frac{\brak{s^2+4}}{\brak{s^4 + 4s^2 +2}} 
 \end{align}
 
+
+\begin{align}
+X_2(s) &= \dot{x_2}(0)\frac{\brak{s^2+4}}{\brak{s^2 +(2+\sqrt{2})}\brak{s^2 +(2-\sqrt{2})}} \\
+\implies X_2(s) &= \dot{x_2}(0)\brak{\brak{\frac{1-\sqrt{2}}{2\brak{s^2 +(2+\sqrt{2})}}}+\brak{\frac{1+\sqrt{2}}{2\brak{s^2+(2-\sqrt{2})}}}}
+\label{eq:ishitha.g22.nm.54.4.eq}
+\end{align}
+
+\begin{equation}
+\frac{a}{s^2+a^2} \systemLinv{} sinat
+\end{equation}
+
+Applying Inverse Laplace Transform on both sides of ~\eqref{eq:ishitha.g22.nm.54.4.eq}
+\begin{align}
+x_2(t) &=  \dot{x_2}(0)\brak{\frac{\brak{1-\sqrt{2}}\sin{(2+\sqrt{2})}t}{2\brak{(2+\sqrt{2})}} + \frac{\brak{1+\sqrt{2}}\sin{(2-\sqrt{2})}t}{2\brak{(2-\sqrt{2})}}} \\
+&= \frac{3}{\sqrt{2}}\brak{-\cos{2t}\sin{\sqrt{2}t} + \sqrt{2}\sin{2t}cos{\sqrt{2}t}}
+\end{align}
 \end{document}
