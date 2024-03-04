@@ -150,10 +150,10 @@ Q: A system with two degrees of freedom, as shown in the figure, has masses $m_1
 
 
 \begin{align}
-m_2\ddot{x_2}(t) + k_2\brak{x_2(t)-x_1(t)}&=0
-\label{eq:ishitha.g22.nm.54.1.eq} \\
 m_1\ddot{x_1}(t) - k_2\brak{x_2(t)-x_1(t)}+ k_1x_1(t)&=0
-\label{eq:ishitha.g22.nm.54.2.eq}
+\label{eq:ishitha.g22.nm.54.1.eq}\\
+m_2\ddot{x_2}(t) + k_2\brak{x_2(t)-x_1(t)}&=0
+\label{eq:ishitha.g22.nm.54.2.eq} 
 \end{align}
 
 Writing ~\eqref{eq:ishitha.g22.nm.54.1.eq} and ~\eqref{eq:ishitha.g22.nm.54.2.eq} in matrix form:
@@ -181,17 +181,6 @@ x_2(t)
 0
 \end{bmatrix}
 \]
-From above ;
-\begin{align}
-x_1(0)&=0 
- \label{eq:ishitha.g22.nm.54.3.eq} \\
-x_2(0)&=0 
-\label{eq:ishitha.g22.nm.54.4.eq} \\
-\ddot{x_1}(0)&=0 
-\label{eq:ishitha.g22.nm.54.5.eq} \\
-\ddot{x_2}(0)&=0
-\label{eq:ishitha.g22.nm.54.6.eq} 
-\end{align}
 
 \begin{equation}
 x(t)     \systemL{}   X(s)  
@@ -202,29 +191,15 @@ x(t)     \systemL{}   X(s)
 x^{''}(t) \systemL{} s^{2}X(s)-sx(0)-x^{'}(0)
 \end{equation}
 
-From ~\eqref{eq:ishitha.g22.nm.54.3.eq} and ~\eqref{eq:ishitha.g22.nm.54.5.eq}
+Applying Laplace transform for ~\eqref{eq:ishitha.g22.nm.54.1.eq} and ~\eqref{eq:ishitha.g22.nm.54.2.eq} \\ assuming they are at their repective maximum displacement at t=0 
 \begin{align}
-X_1(0)&=0\\
-s^{2}X_1(0)-sx_1(0)-x_1^{'}(0)&=0\\
-\implies x_1^{'}(0)&=0
+m_1\brak{s^2X_1(s) -sx_1(0)-0} - k_2\brak{X_2(s)-X_1(s)} + k_1X_1(s) &= 0
+\label{eq:ishitha.g22.nm.54.3.eq} \\
+m_2\brak{s^2X_2(s)-sx_2(0)-0} + k_2\brak{X_2(s)-X_1(s)}&=0
+\label{eq:ishitha.g22.nm.54.4.eq} 
 \end{align}
 
-From ~\eqref{eq:ishitha.g22.nm.54.4.eq} and ~\eqref{eq:ishitha.g22.nm.54.6.eq}
-\begin{align}
-X_2(0)&=0\\
-s^{2}X_2(0)-sx_2(0)-x_2^{'}(0)&=0\\
-\implies x_2^{'}(0)&=0
-\end{align}
-
-Applying Laplace transform for ~\eqref{eq:ishitha.g22.nm.54.1.eq} and ~\eqref{eq:ishitha.g22.nm.54.2.eq}
-\begin{align}
-m_1s^2X_1(s) - k_2\brak{X_2(s)-X_1(s)} + k_1X_1(s) &= 0
-\label{eq:ishitha.g22.nm.54.7.eq} \\
-m_2s^2X_2(s) + k_2\brak{X_2(s)-X_1(s)}&=0
-\label{eq:ishitha.g22.nm.54.8.eq} 
-\end{align}
-
-Writing ~\eqref{eq:ishitha.g22.nm.54.7.eq} and ~\eqref{eq:ishitha.g22.nm.54.8.eq} in matrix form:
+Writing ~\eqref{eq:ishitha.g22.nm.54.3.eq} and ~\eqref{eq:ishitha.g22.nm.54.4.eq} in matrix form:
 \[
 \begin{bmatrix}
 m_1s^2+(k_1+k_2) & -k_2  \\
@@ -236,8 +211,41 @@ X_2(s)
 \end{bmatrix}
 =
 \begin{bmatrix}
-0 \\
-0
+m_1sx_1(0) \\
+m_2sx_2(0)
+\end{bmatrix}
+\]
+
+\[
+\begin{bmatrix}
+X_1(s) \\
+X_2(s)
+\end{bmatrix}
+=
+\begin{bmatrix}
+m_1sx_1(0) \\
+m_2sx_2(0)
+\end{bmatrix}
+\begin{bmatrix}
+m_2s^2+k_2 & k_2  \\
+k_2& m_1s^2+(k_1+k_2)
+\end{bmatrix}
+\]
+
+Finding inverse Laplace transform for this on both sides;
+\[
+\begin{bmatrix}
+x_1(t) \\
+x_2(t)
+\end{bmatrix}
+=
+\begin{bmatrix}
+m_1x_1(0)u(t) \\
+m_2x_2(0)u(t)
+\end{bmatrix}
+\begin{bmatrix}
+m_2tu(t) +k_2 \delta (t)& k_2\delta (t)  \\
+k_2\delta (t)& m_1tu(t)+(k_1+k_2)\delta (t)
 \end{bmatrix}
 \]
 
@@ -253,8 +261,8 @@ X_2(j\omega)
 \end{bmatrix}
 =
 \begin{bmatrix}
-0 \\
-0
+m_1 j\omega x_1(0)\\
+m_2 j\omega x_2(0)
 \end{bmatrix}
 \]
 
