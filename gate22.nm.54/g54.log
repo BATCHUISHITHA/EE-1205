@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.1.3)  5 MAR 2024 01:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.1.3)  5 MAR 2024 02:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1229,12 +1229,17 @@ Overfull \hbox (33.5046pt too wide) detected at line 200
  []
 
 
-Overfull \hbox (56.6741pt too wide) detected at line 250
-[] \OT1/txr/m/n/12 = [] []
+Overfull \hbox (23.73138pt too wide) detected at line 242
+[] \OT1/txr/m/n/12 = \OMS/txsy/m/n/12 L[] [] ^^C
  []
 
 
-Overfull \hbox (28.54613pt too wide) detected at line 267
+Overfull \hbox (15.34361pt too wide) detected at line 253
+[] \OMS/txsy/m/n/12 ^^C []
+ []
+
+
+Overfull \hbox (28.54613pt too wide) detected at line 270
 [] [] \OT1/txr/m/n/12 = []
  []
 
@@ -1257,7 +1262,7 @@ Here is how much of TeX's memory you used:
  46722 multiletter control sequences out of 15000+600000
  550156 words of font info for 204 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 101i,15n,96p,407b,336s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 101i,15n,96p,407b,338s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type
@@ -1266,7 +1271,7 @@ fonts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on g54.pdf (2 pages, 100411 bytes).
+Output written on g54.pdf (2 pages, 100661 bytes).
 PDF statistics:
  92 PDF objects out of 1000 (max. 8388607)
  68 compressed objects within 1 object stream

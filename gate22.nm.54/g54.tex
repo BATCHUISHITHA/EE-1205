@@ -221,7 +221,8 @@ m_2sx_2(0)
 X_1(s) \\
 X_2(s)
 \end{bmatrix}
-=
+= \frac{1}{m_1m_2s^4+(k_1+k_2)m_2s^2+k_2m_1s^2+k_1k_2} \]
+\[
 \begin{bmatrix}
 m_1sx_1(0) \\
 m_2sx_2(0)
@@ -238,11 +239,13 @@ Finding inverse Laplace transform for this on both sides;
 x_1(t) \\
 x_2(t)
 \end{bmatrix}
-=
+= \mathcal{L}^{-1}\brak{\frac{1}{m_1m_2s^4+(k_1+k_2)m_2s^2+k_2m_1s^2+k_1k_2} } * \]
+\[
 \begin{bmatrix}
 m_1x_1(0)u(t) \\
 m_2x_2(0)u(t)
 \end{bmatrix}
+*
 \begin{bmatrix}
 m_2tu(t) +k_2 \delta (t)& k_2\delta (t)  \\
 k_2\delta (t)& m_1tu(t)+(k_1+k_2)\delta (t)
