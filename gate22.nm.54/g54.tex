@@ -157,30 +157,30 @@ m_2\ddot{x_2}(t) + k_2\brak{x_2(t)-x_1(t)}&=0
 \end{align}
 
 Writing ~\eqref{eq:ishitha.g22.nm.54.1.eq} and ~\eqref{eq:ishitha.g22.nm.54.2.eq} in matrix form:
-\[
-\begin{bmatrix}
+\begin{align}
+\myvec{
 m_1 & 0  \\
 0 & m_2
-\end{bmatrix}
-\begin{bmatrix}
+}
+\myvec{
 \ddot{x_1}(t) \\
 \ddot{x_2}(t)
-\end{bmatrix}
+}
 +
-\begin{bmatrix}
+\myvec{
 k_1+k_2 & -k_2  \\
 -k_2 & k_2
-\end{bmatrix}
-\begin{bmatrix}
+}
+\myvec{
 x_1(t) \\
 x_2(t)
-\end{bmatrix}
+}
 =
-\begin{bmatrix}
+\myvec{
 0 \\
 0
-\end{bmatrix}
-\]
+}
+\end{align}
 
 \begin{equation}
 x(t)     \systemL{}   X(s)  
@@ -200,97 +200,54 @@ m_2\brak{s^2X_2(s)-sx_2(0)-0} + k_2\brak{X_2(s)-X_1(s)}&=0
 \end{align}
 
 Writing ~\eqref{eq:ishitha.g22.nm.54.3.eq} and ~\eqref{eq:ishitha.g22.nm.54.4.eq} in matrix form:
-\[
-\begin{bmatrix}
+\begin{align}
+\myvec{
 m_1s^2+(k_1+k_2) & -k_2  \\
 -k_2& m_2s^2+k_2
-\end{bmatrix}
-\begin{bmatrix}
+}
+\myvec{
 X_1(s) \\
 X_2(s)
-\end{bmatrix}
+}
 =
-\begin{bmatrix}
+\myvec{
 m_1sx_1(0) \\
 m_2sx_2(0)
-\end{bmatrix}
-\]
+}
+\end{align}
 
-\[
-\begin{bmatrix}
+\begin{align}
+\myvec{
 X_1(s) \\
 X_2(s)
-\end{bmatrix}
-= \frac{1}{m_1m_2s^4+(k_1+k_2)m_2s^2+k_2m_1s^2+k_1k_2} \]
-\[
-\begin{bmatrix}
-m_1sx_1(0) \\
-m_2sx_2(0)
-\end{bmatrix}
-\begin{bmatrix}
+}
+= \frac{1}{m_1m_2s^4+(k_1+k_2)m_2s^2+k_2m_1s^2+k_1k_2}
+\end{align}
+
+\begin{align}
+\myvec{
 m_2s^2+k_2 & k_2  \\
 k_2& m_1s^2+(k_1+k_2)
-\end{bmatrix}
-\]
-
-Finding inverse Laplace transform for this on both sides;
-\[
-\begin{bmatrix}
-x_1(t) \\
-x_2(t)
-\end{bmatrix}
-= \mathcal{L}^{-1}\brak{\frac{1}{m_1m_2s^4+(k_1+k_2)m_2s^2+k_2m_1s^2+k_1k_2} } * \]
-\[
-\begin{bmatrix}
-m_1x_1(0)u(t) \\
-m_2x_2(0)u(t)
-\end{bmatrix}
-*
-\begin{bmatrix}
-m_2tu(t) +k_2 \delta (t)& k_2\delta (t)  \\
-k_2\delta (t)& m_1tu(t)+(k_1+k_2)\delta (t)
-\end{bmatrix}
-\]
-
-For frequency put $s=j\omega$,
-\[
-\begin{bmatrix}
--m_1\omega ^2+(k_1+k_2) & -k_2  \\
--k_2& -m_2\omega ^2+k_2
-\end{bmatrix}
-\begin{bmatrix}
-X_1(j\omega) \\
-X_2(j\omega)
-\end{bmatrix}
-=
-\begin{bmatrix}
-m_1 j\omega x_1(0)\\
-m_2 j\omega x_2(0)
-\end{bmatrix}
-\]
-
-For free vibration 
-\[
-\det
-\begin{pmatrix}
--m_1\omega^2+(k_1+k_2) & -k_2 \\
--k_2 & -m_2\omega^2+k_2
-\end{pmatrix}
-= 0
-\]
-
-\begin{align}
-\brak{-m_1\omega^2+(k_1+k_2)}\brak{-m_2\omega^2+k_2}-\brak{-k_2}\brak{-k_2}&=0 \\
-m_1m_2\omega ^4 -\sbrak{\brak{k_1+k_2}m_2+k_2m_1}\omega^2 +k_1k_2&=0\\
-\implies \omega ^4 -\frac{\sbrak{\brak{k_1+k_2}m_2+k_2m_1}}{m_1m_2}\omega^2 +\frac{k_1k_2}{m_1m_2}&=0
+}
+\myvec{
+m_1sx_1(0) \\
+m_2sx_2(0)
+}
 \end{align}
 
-Substituting the values;
 \begin{align}
-\implies \omega ^4 -4\omega^2 +2&=0 \\
-\omega ^2 &= \frac{4\pm \sqrt{16-8}}{2}\\
-&= 2\pm \sqrt{2}\\
- \omega &= \pm \sqrt{2\pm \sqrt{2}}\\
+X_1(s)&=\frac{m_1m_2s^3x_1(0)+k_2m_1sx_1(0)+m_2k_2sx_2(0)}{m_1m_2s^4+(k_1+k_2)m_2s^2+k_2m_1s^2+k_1k_2} \\
+X_2(s)&=\frac{m_1k_2sx_1(0)+m_1m_2s^3x_2(0)+(k_1+k_2)m_2sx_2(0)}{m_1m_2s^4+(k_1+k_2)m_2s^2+k_2m_1s^2+k_1k_2}
+\end{align}
+
+Considering denominator of $X_i(s)$ for $i=1,2$(ie: characteristic equation of the system):
+\begin{align}
+m_1m_2s^4+(k_1+k_2)m_2s^2+k_2m_1s^2+k_1k_2 &=0 \\
+s^4 +4s^2+2&=0\\
+\implies s^2&=\frac{-4\pm \sqrt{16-8}}{2} \\
+&= -2 \pm \sqrt{2} \\
+\omega&=\pm\sqrt{2\mp \sqrt{2}}\\
 \implies \omega_{least} &= 0.765 rad/s
-\end{align}
+\end{align} 
+
 \end{document}
