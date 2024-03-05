@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.1.3)  5 MAR 2024 11:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.1.3)  5 MAR 2024 12:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1229,12 +1229,12 @@ Overfull \hbox (33.5046pt too wide) detected at line 200
  []
 
 
-Overfull \hbox (12.68224pt too wide) detected at line 241
+Overfull \hbox (40.21542pt too wide) detected at line 238
 []
  []
 
 
-Overfull \hbox (23.64993pt too wide) detected at line 251
+Overfull \hbox (23.64993pt too wide) detected at line 248
 []
  []
 
@@ -1251,9 +1251,9 @@ Package rerunfilecheck Info: File `g54.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 29166 strings out of 478287
- 575046 string characters out of 5849290
- 860582 words of memory out of 5000000
+ 29165 strings out of 478287
+ 575033 string characters out of 5849290
+ 859582 words of memory out of 5000000
  46722 multiletter control sequences out of 15000+600000
  550156 words of font info for 204 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1266,10 +1266,10 @@ fonts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on g54.pdf (2 pages, 99151 bytes).
+Output written on g54.pdf (2 pages, 99165 bytes).
 PDF statistics:
- 96 PDF objects out of 1000 (max. 8388607)
- 72 compressed objects within 1 object stream
- 24 named destinations out of 1000 (max. 500000)
+ 95 PDF objects out of 1000 (max. 8388607)
+ 71 compressed objects within 1 object stream
+ 23 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
