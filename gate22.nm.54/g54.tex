@@ -269,65 +269,108 @@ METHOD-2:CONVERTING MECHANICAL SYSTEM INTO ITS ANALOGOUS ELECTRICAL CIRCUIT BY F
     \label{fig:ishitha.g22.nm.54.f3}
 \end{figure}   
 \begin{align}
- k_1\int i_1 \, dt + L_1\frac{di_1}{dt}+L_2\brak{\frac{di_1}{dt}-\frac{di_2}{dt}}&=0
+ k_1\int i_1 \, dt + L_1\frac{di_1}{dt}+k_2\int \brak{i_1-i_2} \, dt &=0
 \label{eq:ishitha.g22.nm.54.5.eq} \\
-k_2\int i_2 \, dt + L_2\brak{\frac{di_2}{dt}-\frac{di_1}{dt}}&=0
+ L_2\frac{di_2}{dt}-k_2\int \brak{i_1-i_2} \, dt &=0
 \label{eq:ishitha.g22.nm.54.6.eq} 
 \end{align}
 
 Differentiating ~\eqref{eq:ishitha.g22.nm.54.5.eq} and ~\eqref{eq:ishitha.g22.nm.54.6.eq} wrt $t$;
 \begin{align}
-k_1i_1 + L_1\frac{d^2i_1}{dt^2}+L_2\brak{\frac{d^2i_1}{dt^2}-\frac{d^2i_2}{dt^2}}&=0
+ k_1i_1 + L_1\frac{d^2i_1}{dt^2}+k_2\brak{i_1-i_2} &=0
 \label{eq:ishitha.g22.nm.54.7.eq} \\
- k_2i_2 + L_2\brak{\frac{d^2i_2}{dt^2}-\frac{d^2i_1}{dt^2}}&=0
+  L_2\frac{d^2i_2}{dt^2}-k_2\brak{i_1-i_2}  &=0
  \label{eq:ishitha.g22.nm.54.8.eq}
 \end{align}
 
-From ~\eqref{eq:ishitha.g22.nm.54.8.eq}
+Writing ~\eqref{eq:ishitha.g22.nm.54.7.eq} and ~\eqref{eq:ishitha.g22.nm.54.8.eq} in matrix form:
 \begin{align}
-\implies \frac{d^2i_1}{dt^2}&=\frac{k_2i_2+L_2\frac{d^2i_2}{dt^2}}{L_2}
-\label{eq:ishitha.g22.nm.54.9.eq}
+\myvec{
+L_1 & 0  \\
+0 & L_2
+}
+\myvec{
+\ddot{i_1}(t) \\
+\ddot{i_2}(t)
+}
++
+\myvec{
+k_1+k_2 & -k_2  \\
+-k_2 & k_2
+}
+\myvec{
+i_1(t) \\
+i_2(t)
+}
+=
+\myvec{
+0 \\
+0
+}
 \end{align}
 
-Differentiating ~\eqref{eq:ishitha.g22.nm.54.9.eq} wrt $t$ twice;
+\begin{equation}
+i(t)     \systemL{}   I(s)  
+\end{equation}
+
+
+\begin{equation}
+i^{''}(t) \systemL{} s^{2}I(s)-si(0)-i^{'}(0)
+\end{equation}
+
+Applying Laplace transform assuming current to be maximum;
 \begin{align}
-\implies \frac{d^4i_1}{dt^4}&=\frac{k_2\frac{d^2i_2}{dt^2}+L_2\frac{d^4i_2}{dt^4}}{L_2}
-\label{eq:ishitha.g22.nm.54.10.eq}
+L_1\brak{s^2I_1(s) -i_1^{'}(0)} - k_2\brak{I_2(s)-I_1(s)} + k_1I_1(s) &= 0
+\label{eq:ishitha.g22.nm.54.9.eq} \\
+L_2\brak{s^2I_2(s)-i_2^{'}(0)} + k_2\brak{I_2(s)-I_1(s)}&=0
+\label{eq:ishitha.g22.nm.54.10.eq} 
 \end{align}
 
-Differentiating ~\eqref{eq:ishitha.g22.nm.54.7.eq} wrt $t$ twice;
+Writing ~\eqref{eq:ishitha.g22.nm.54.9.eq} and ~\eqref{eq:ishitha.g22.nm.54.10.eq} in matrix form:
 \begin{align}
-k_1\frac{d^2i_1}{dt^2} + L_1\frac{d^4i_1}{dt^4}+L_2\brak{\frac{d^4i_1}{dt^4}-\frac{d^4i_2}{dt^4}}&=0
-\label{eq:ishitha.g22.nm.54.11.eq}
-\end{align}
-
-Substituting  ~\eqref{eq:ishitha.g22.nm.54.9.eq} and ~\eqref{eq:ishitha.g22.nm.54.10.eq} in ~\eqref{eq:ishitha.g22.nm.54.11.eq}
-\begin{align}
-k_1\brak{\frac{k_2i_2+L_2\frac{d^2i_2}{dt^2}}{L_2}}+ \brak{L_1+L_2}\brak{\frac{k_2\frac{d^2i_2}{dt^2}+L_2\frac{d^4i_2}{dt^4}}{L_2}}-L_2\frac{d^4i_2}{dt^4}&=0
-\end{align}
-
-\begin{align}
-\frac{d^4i_2}{dt^4}\brak{L_1+L_2-L_2} + \frac{d^2i_2}{dt^2}\brak{k_1+\frac{k_2\brak{L_1+L_2}}{L_2}} + \frac{k_1k_2}{L_2}i_2&=0 \\
-L_1L_2\frac{d^4i_2}{dt^2}+\sbrak{k_1L_2+k_2\brak{L_1+L_2}}\frac{d^2i_2}{dt^2} + k_1k_2i_2&=0
-\label{eq:ishitha.g22.nm.54.12.eq}
-\end{align}
-
-Applying Laplace transform for ~\eqref{eq:ishitha.g22.nm.54.12.eq}
-\begin{align}
-L_1L_2s^4I_2(s)+\sbrak{k_1L_2+k_2\brak{L_1+L_2}}s^2I_2(s)+k_1k_2I_2(s)&=0
-\label{eq:ishitha.g22.nm.54.13.eq}
-\end{align}
-Substituting the values in ~\eqref{eq:ishitha.g22.nm.54.13.eq}
-\begin{align}
-(200)(100)s^4+\sbrak{(200)(100)+(200)\brak{200+100}}s^2 \nonumber \\
-+ (200)(200)&=0 
+\myvec{
+L_1s^2 + \brak{k_1+k_2} & -k_2  \\
+-k_2& L_2s^2+k_2
+}
+\myvec{
+I_1(s) \\
+I_2(s)
+}
+=
+\myvec{
+L_1i_1^{'}(0) \\
+L_2i_2^{'}(0)
+}
 \end{align}
 
 \begin{align}
+\myvec{
+I_1(s) \\
+I_2(s)
+}
+= \frac{1}{L_1L_2s^4+(k_1+k_2)L_2s^2+k_2L_1s^2+k_1k_2} \nonumber \\
+\myvec{
+L_2s^2+k_2 & k_2  \\
+k_2& L_1s^2 + \brak{k_1+k_2}
+}
+\myvec{
+L_1i_1^{'}(0)\\
+L_2i_2^{'}(0)
+}
+\end{align}
+
+\begin{align}
+\implies I_1(s)&=\frac{\brak{L_2s^2+k_2}L_1i_1^{'}(0) + k_2L_2i_2^{'}(0)}{L_1L_2s^4+(k_1+k_2)L_2s^2+k_2L_1s^2+k_1k_2} \\
+\implies I_2(s)&= \frac{k_2L_1i_1^{'}(0)+\brak{L_1s^2 + \brak{k_1+k_2}}L_2i_2^{'}(0)}{L_1L_2s^4+(k_1+k_2)L_2s^2+k_2L_1s^2+k_1k_2} 
+\end{align}
+
+Considering denominator of $I_i(s)$ for $i=1,2$(ie: characteristic equation of the system):
+\begin{align}
+L_1L_2s^4+(k_1+k_2)L_2s^2+k_2L_1s^2+k_1k_2 &=0 \\
 s^4 +4s^2+2&=0\\
 \implies s^2&=\frac{-4\pm \sqrt{16-8}}{2} \\
 &= -2 \pm \sqrt{2} \\
 \omega&=\pm\sqrt{2\mp \sqrt{2}}\\
 \implies \omega_{least} &= 0.765 rad/s
-\end{align}
+\end{align} 
 \end{document}
