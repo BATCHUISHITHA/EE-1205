@@ -139,6 +139,8 @@ Q: A system with two degrees of freedom, as shown in the figure, has masses $m_1
     \label{}
 \end{figure} 
 
+METHOD-1:
+
 \begin{table}[!ht]    
     \centering
     \resizebox{9cm}{2cm}{
@@ -247,4 +249,67 @@ s^4 +4s^2+2&=0\\
 \implies \omega_{least} &= 0.765 rad/s
 \end{align} 
 
+
+METHOD-2:CONVERTING MECHANICAL SYSTEM INTO ITS ANALOGOUS ELECTRICAL CIRCUIT BY FORCE VOLTAGE METHOD
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\columnwidth]{figs/tikz.pdf}
+    \caption{ }
+    \label{}
+\end{figure}   
+\begin{align}
+L_1\brak{\frac{di_1}{dt}-\frac{di_2}{dt}} + k_1\int i_1 \, dt &=0
+\label{eq:ishitha.g22.nm.54.5.eq} \\
+k_2\int i_2 \, dt + L_2\brak{\frac{di_2}{dt}} + L_1\brak{\frac{di_2}{dt}-\frac{di_1}{dt}}&=0
+\label{eq:ishitha.g22.nm.54.6.eq} 
+\end{align}
+
+Differentiating ~\eqref{eq:ishitha.g22.nm.54.5.eq} and ~\eqref{eq:ishitha.g22.nm.54.6.eq} wrt $t$;
+\begin{align}
+L_1\brak{\frac{d^2i_1}{dt^2}-\frac{d^2i_2}{dt^2}} + k_1i_1  &=0
+\label{eq:ishitha.g22.nm.54.7.eq} \\
+ k_2 i_2 + L_2\brak{\frac{d^2i_2}{dt^2}} + L_1\brak{\frac{d^2i_2}{dt^2}-\frac{d^2i_1}{dt^2}}&=0
+ \label{eq:ishitha.g22.nm.54.8.eq}
+\end{align}
+
+From ~\eqref{eq:ishitha.g22.nm.54.8.eq}
+\begin{align}
+\implies \frac{d^2i_1}{dt^2}&=\frac{k_2i_2+\brak{L_1+L_2}\frac{d^2i_2}{dt^2}}{L_1}
+\label{eq:ishitha.g22.nm.54.9.eq}
+\end{align}
+
+Differentiating ~\eqref{eq:ishitha.g22.nm.54.9.eq} wrt $t$ twice;
+\begin{align}
+\implies \frac{d^4i_1}{dt^4}&=\frac{k_2\frac{d^2i_2}{dt^2}+\brak{L_1+L_2}\frac{d^4i_2}{dt^4}}{L_1}
+\label{eq:ishitha.g22.nm.54.10.eq}
+\end{align}
+
+Differentiating ~\eqref{eq:ishitha.g22.nm.54.7.eq} wrt $t$ twice;
+\begin{align}
+L_1\brak{\frac{d^4i_1}{dt^4}-\frac{d^4i_2}{dt^4}} + k_1\frac{d^2i_1}{dt^2} &=0
+\end{align}
+
+From ~\eqref{eq:ishitha.g22.nm.54.9.eq} and ~\eqref{eq:ishitha.g22.nm.54.10.eq},
+\begin{align}
+L_1\brak{\frac{k_2\frac{d^2i_2}{dt^2}+\brak{L_1+L_2}\frac{d^4i_2}{dt^4}}{L_1}}-L_1\frac{d^4i_2}{dt^4} + k_1\brak{\frac{k_2i_2+\brak{L_1+L_2}\frac{d^2i_2}{dt^2}}{L_1}} &=0
+\end{align}
+
+\begin{align}
+\frac{d^4i_2}{dt^4}\brak{L_1+L_2-L_1} + \frac{d^2i_2}{dt^2}\brak{k_2+\frac{k_1\brak{L_1+L_2}}{L_1}} + \frac{k_1k_2}{L_1}i_2&=0 \\
+L_1L_2\frac{d^4i_2}{dt^2}+\sbrak{k_2L_1+k_1\brak{L_1+L_2}}\frac{d^2i_2}{dt^2} + k_1k_2i_2&=0
+\label{eq:ishitha.g22.nm.54.11.eq}
+\end{align}
+
+Substituting the values in ~\eqref{eq:ishitha.g22.nm.54.11.eq}
+\begin{align}
+(200)(100)\frac{d^4i_2}{dt^2} +\sbrak{(200)(200)+(200)\brak{200+100}}\frac{d^2i_2}{dt^2} \nonumber \\
++ (200)(200)i_2&=0 \\
+\frac{d^4i_2}{dt^2} + 5\frac{d^2i_2}{dt^2} + 2i_2&=0
+\end{align}
+
+Let $i_2=e^{st}$,
+\begin{align}
+s^4 +5s^2+2&=0
+\end{align}
 \end{document}
