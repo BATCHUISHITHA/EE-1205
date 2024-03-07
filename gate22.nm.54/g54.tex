@@ -244,7 +244,10 @@ Considering denominator of $X_i(s)$ for $i=1,2$(ie: characteristic equation of t
 m_1m_2s^4+(k_1+k_2)m_2s^2+k_2m_1s^2+k_1k_2 &=0 \\
 s^4 +4s^2+2&=0\\
 \implies s^2&=\frac{-4\pm \sqrt{16-8}}{2} \\
-&= -2 \pm \sqrt{2} \\
+&= -2 \pm \sqrt{2} 
+\end{align}
+The roots of s are imaginary so it's Sinusoid.
+\begin{align}
 \omega&=\pm\sqrt{2\mp \sqrt{2}}\\
 \implies \omega_{least} &= 0.765 rad/s
 \end{align} 
@@ -267,7 +270,8 @@ METHOD-2:CONVERTING MECHANICAL SYSTEM INTO ITS ANALOGOUS ELECTRICAL CIRCUIT BY F
     \includegraphics[width=\columnwidth]{figs/tikz.pdf}
     \caption{ }
     \label{fig:ishitha.g22.nm.54.f3}
-\end{figure}   
+\end{figure}  
+ 
 \begin{align}
  k_1\int i_1 \, dt + L_1\frac{di_1}{dt}+k_2\int \brak{i_1-i_2} \, dt &=0
 \label{eq:ishitha.g22.nm.54.5.eq} \\
@@ -275,13 +279,14 @@ METHOD-2:CONVERTING MECHANICAL SYSTEM INTO ITS ANALOGOUS ELECTRICAL CIRCUIT BY F
 \label{eq:ishitha.g22.nm.54.6.eq} 
 \end{align}
 
-Differentiating ~\eqref{eq:ishitha.g22.nm.54.5.eq} and ~\eqref{eq:ishitha.g22.nm.54.6.eq} wrt $t$;
-\begin{align}
- k_1i_1 + L_1\frac{d^2i_1}{dt^2}+k_2\brak{i_1-i_2} &=0
-\label{eq:ishitha.g22.nm.54.7.eq} \\
-  L_2\frac{d^2i_2}{dt^2}-k_2\brak{i_1-i_2}  &=0
- \label{eq:ishitha.g22.nm.54.8.eq}
-\end{align}
+but we know, $i=\frac{dq}{dt}$ 
+ \begin{align}
+ \implies L_1\ddot q_1 -k_2\brak{q_2-q_1} + k_1q_1  &=0 
+ \label{eq:ishitha.g22.nm.54.7.eq} \\
+ \implies L_2\ddot q_2+k_2\brak{q_2-q_1} \, dt &=0
+  \label{eq:ishitha.g22.nm.54.8.eq}
+\end{align}  
+
 
 Writing ~\eqref{eq:ishitha.g22.nm.54.7.eq} and ~\eqref{eq:ishitha.g22.nm.54.8.eq} in matrix form:
 \begin{align}
@@ -290,8 +295,8 @@ L_1 & 0  \\
 0 & L_2
 }
 \myvec{
-\ddot{i_1}(t) \\
-\ddot{i_2}(t)
+\ddot{q_1}(t) \\
+\ddot{q_2}(t)
 }
 +
 \myvec{
@@ -299,8 +304,8 @@ k_1+k_2 & -k_2  \\
 -k_2 & k_2
 }
 \myvec{
-i_1(t) \\
-i_2(t)
+q_1(t) \\
+q_2(t)
 }
 =
 \myvec{
@@ -310,19 +315,19 @@ i_2(t)
 \end{align}
 
 \begin{equation}
-i(t)     \systemL{}   I(s)  
+q(t)     \systemL{}   Q(s)  
 \end{equation}
 
 
 \begin{equation}
-i^{''}(t) \systemL{} s^{2}I(s)-si(0)-i^{'}(0)
+q^{''}(t) \systemL{} s^{2}Q(s)-sq(0)-q^{'}(0)
 \end{equation}
 
-Applying Laplace transform assuming current to be maximum;
+Assuming charge to be maximum at t=0;
 \begin{align}
-L_1\brak{s^2I_1(s) -i_1^{'}(0)} - k_2\brak{I_2(s)-I_1(s)} + k_1I_1(s) &= 0
+L_1\brak{s^2Q_1(s)-sq_1(0)} - k_2\brak{Q_2(s)-Q_1(s)} \nonumber \\ + k_1Q_1(s) &= 0
 \label{eq:ishitha.g22.nm.54.9.eq} \\
-L_2\brak{s^2I_2(s)-i_2^{'}(0)} + k_2\brak{I_2(s)-I_1(s)}&=0
+L_2\brak{s^2Q_2(s)-sq_2(0)} + k_2\brak{Q_2(s)-Q_1(s)}\nonumber \\&=0
 \label{eq:ishitha.g22.nm.54.10.eq} 
 \end{align}
 
@@ -333,20 +338,20 @@ L_1s^2 + \brak{k_1+k_2} & -k_2  \\
 -k_2& L_2s^2+k_2
 }
 \myvec{
-I_1(s) \\
-I_2(s)
+Q_1(s) \\
+Q_2(s)
 }
 =
 \myvec{
-L_1i_1^{'}(0) \\
-L_2i_2^{'}(0)
+L_1sq_1(0) \\
+L_2sq_2(0)
 }
 \end{align}
 
 \begin{align}
 \myvec{
-I_1(s) \\
-I_2(s)
+Q_1(s) \\
+Q2(s)
 }
 = \frac{1}{L_1L_2s^4+(k_1+k_2)L_2s^2+k_2L_1s^2+k_1k_2} \nonumber \\
 \myvec{
@@ -354,23 +359,108 @@ L_2s^2+k_2 & k_2  \\
 k_2& L_1s^2 + \brak{k_1+k_2}
 }
 \myvec{
-L_1i_1^{'}(0)\\
-L_2i_2^{'}(0)
+L_1sq_1(0) \\
+L_2sq_2(0)
 }
 \end{align}
 
 \begin{align}
-\implies I_1(s)&=\frac{\brak{L_2s^2+k_2}L_1i_1^{'}(0) + k_2L_2i_2^{'}(0)}{L_1L_2s^4+(k_1+k_2)L_2s^2+k_2L_1s^2+k_1k_2} \\
-\implies I_2(s)&= \frac{k_2L_1i_1^{'}(0)+\brak{L_1s^2 + \brak{k_1+k_2}}L_2i_2^{'}(0)}{L_1L_2s^4+(k_1+k_2)L_2s^2+k_2L_1s^2+k_1k_2} 
+\implies Q_1(s)&=\frac{L_1L_2s^3q_1(0)+k_2L_1sq_1(0)+k_2L_2sq_2(0)}{L_1L_2s^4+(k_1+k_2)L_2s^2+k_2L_1s^2+k_1k_2} \\
+\implies Q_2(s)&= \frac{k_2L_1sq_1(0)+L_1L_2s^3q_2(0)+\brak{k_1+k_2}L_2sq_2(0)}{L_1L_2s^4+(k_1+k_2)L_2s^2+k_2L_1s^2+k_1k_2} 
 \end{align}
 
-Considering denominator of $I_i(s)$ for $i=1,2$(ie: characteristic equation of the system):
+Considering denominator of $Q_i(s)$ for $i=1,2$(ie: characteristic equation of the system):
 \begin{align}
 L_1L_2s^4+(k_1+k_2)L_2s^2+k_2L_1s^2+k_1k_2 &=0 \\
 s^4 +4s^2+2&=0\\
 \implies s^2&=\frac{-4\pm \sqrt{16-8}}{2} \\
-&= -2 \pm \sqrt{2} \\
+&= -2 \pm \sqrt{2} 
+\end{align}
+The roots of s are imaginary so it's Sinusoid.
+\begin{align}
 \omega&=\pm\sqrt{2\mp \sqrt{2}}\\
 \implies \omega_{least} &= 0.765 rad/s
 \end{align} 
+
+
+DOUBT:
+
+\begin{align}
+\myvec{
+m_1 & 0  \\
+0 & m_2
+}
+\myvec{
+\ddot{x_1}(t) \\
+\ddot{x_2}(t)
+}
++
+\myvec{
+k_1+k_2 & -k_2  \\
+-k_2 & k_2
+}
+\myvec{
+x_1(t) \\
+x_2(t)
+}
+=
+\myvec{
+0 \\
+0
+}
+\end{align}
+
+Directly substituting $x''=-\omega^2 x$
+\begin{align}
+\myvec{
+-m_1\omega^2+k_1+k_2 & -k_2  \\
+-k_2  & -m_2\omega^2+ k_2
+}
+\myvec{
+x_1(t) \\
+x_2(t)
+}
+=
+\myvec{
+0 \\
+0
+}
+\end{align}
+And then substituting $s=j\omega$;
+\begin{align}
+\myvec{
+m_1s^2+k_1+k_2 & -k_2  \\
+-k_2  & m_2s^2+ k_2
+}
+\myvec{
+x_1(t) \\
+x_2(t)
+}
+=
+\myvec{
+0 \\
+0
+}
+\end{align}
+But when i apply laplace transform and then write in a matrix with our assumption ie:
+\begin{align}
+\myvec{
+X_1(s) \\
+X_2(s)
+}
+= \frac{1}{m_1m_2s^4+(k_1+k_2)m_2s^2+k_2m_1s^2+k_1k_2} \nonumber \\
+\myvec{
+m_2s^2+k_2 & k_2  \\
+k_2& m_1s^2+(k_1+k_2)
+}
+\myvec{
+m_1sx_1(0) \\
+m_2sx_2(0)
+}
+\end{align}
+
+These both are also  not matching...
+
+Is there any error in this..
+
 \end{document}
