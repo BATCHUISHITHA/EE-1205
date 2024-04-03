@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.2)  3 APR 2024 21:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.2)  3 APR 2024 23:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1344,29 +1344,29 @@ Underfull \hbox (badness 6125) in paragraph at lines 69--80
 
 
  <./figs/beforefiltering.png> <./figs/afterfiltering.png>]
-<figs/2.2.png, id=90, 462.528pt x 346.896pt>
+<figs/2.2.png, id=92, 462.528pt x 346.896pt>
 File: figs/2.2.png Graphic file (type png)
 <use figs/2.2.png>
 Package pdftex.def Info: figs/2.2.png  used on input line 105.
 (pdftex.def)             Requested size: 252.0pt x 189.00427pt.
  [2 <./figs/2.2.png>]
-<figs/3.4.png, id=134, 462.528pt x 346.896pt>
+<figs/3.4.png, id=137, 462.528pt x 346.896pt>
 File: figs/3.4.png Graphic file (type png)
 <use figs/3.4.png>
 Package pdftex.def Info: figs/3.4.png  used on input line 216.
 (pdftex.def)             Requested size: 252.0pt x 189.00427pt.
-<figs/4.2.png, id=139, 462.528pt x 346.896pt>
+<figs/4.2.png, id=142, 462.528pt x 346.896pt>
 File: figs/4.2.png Graphic file (type png)
 <use figs/4.2.png>
 Package pdftex.def Info: figs/4.2.png  used on input line 245.
 (pdftex.def)             Requested size: 252.0pt x 189.00427pt.
  [3 <./figs/3.4.png> <./figs/4.2.png>]
-<figs/4.4.png, id=172, 462.528pt x 346.896pt>
+<figs/4.4.png, id=174, 462.528pt x 346.896pt>
 File: figs/4.4.png Graphic file (type png)
 <use figs/4.4.png>
 Package pdftex.def Info: figs/4.4.png  used on input line 274.
 (pdftex.def)             Requested size: 252.0pt x 189.00427pt.
-<figs/4.5.png, id=176, 462.528pt x 346.896pt>
+<figs/4.5.png, id=178, 462.528pt x 346.896pt>
 File: figs/4.5.png Graphic file (type png)
 <use figs/4.5.png>
 Package pdftex.def Info: figs/4.5.png  used on input line 293.
@@ -1377,12 +1377,12 @@ Overfull \hbox (4.18123pt too wide) detected at line 323
  []
 
 [4 <./figs/4.4.png> <./figs/4.5.png>]
-<figs/5.png, id=206, 462.528pt x 346.896pt>
+<figs/5.png, id=208, 462.528pt x 346.896pt>
 File: figs/5.png Graphic file (type png)
 <use figs/5.png>
 Package pdftex.def Info: figs/5.png  used on input line 330.
 (pdftex.def)             Requested size: 252.0pt x 189.00427pt.
-<figs/5.4.png, id=207, 462.528pt x 346.896pt>
+<figs/5.4.png, id=209, 462.528pt x 346.896pt>
 File: figs/5.4.png Graphic file (type png)
 <use figs/5.4.png>
 Package pdftex.def Info: figs/5.4.png  used on input line 341.
@@ -1393,7 +1393,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 391--395
  []
 
 [5 <./figs/5.png> <./figs/5.4.png>]
-<figs/6.1.png, id=234, 462.528pt x 346.896pt>
+<figs/6.1.png, id=236, 462.528pt x 346.896pt>
 File: figs/6.1.png Graphic file (type png)
 <use figs/6.1.png>
 Package pdftex.def Info: figs/6.1.png  used on input line 400.
@@ -1419,13 +1419,13 @@ Overfull \hbox (11.15627pt too wide) in paragraph at lines 5--14
  []
 
 )
-<figs/6.2.png, id=242, 462.528pt x 346.896pt>
+<figs/6.2.png, id=244, 462.528pt x 346.896pt>
 File: figs/6.2.png Graphic file (type png)
 <use figs/6.2.png>
 Package pdftex.def Info: figs/6.2.png  used on input line 450.
 (pdftex.def)             Requested size: 252.0pt x 189.00427pt.
  [6 <./figs/6.1.png>]
-<figs/6.2.1.png, id=269, 462.528pt x 346.896pt>
+<figs/6.2.1.png, id=271, 462.528pt x 346.896pt>
 File: figs/6.2.1.png Graphic file (type png)
 <use figs/6.2.1.png>
 Package pdftex.def Info: figs/6.2.1.png  used on input line 467.
@@ -1445,9 +1445,9 @@ Package rerunfilecheck Info: File `audiofiltering.out' has not changed.
 (rerunfilecheck)             Checksum: 02699574D7262817052BDD62DC09BA4E;673.
  ) 
 Here is how much of TeX's memory you used:
- 43701 strings out of 478287
- 1005228 string characters out of 5849290
- 1693341 words of memory out of 5000000
+ 43703 strings out of 478287
+ 1005258 string characters out of 5849290
+ 1699341 words of memory out of 5000000
  61003 multiletter control sequences out of 15000+600000
  551005 words of font info for 207 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
@@ -1461,10 +1461,10 @@ pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on audiofiltering.pdf (7 pages, 735686 bytes).
+Output written on audiofiltering.pdf (7 pages, 735778 bytes).
 PDF statistics:
- 362 PDF objects out of 1000 (max. 8388607)
- 307 compressed objects within 4 object streams
- 170 named destinations out of 1000 (max. 500000)
+ 364 PDF objects out of 1000 (max. 8388607)
+ 309 compressed objects within 4 object streams
+ 172 named destinations out of 1000 (max. 500000)
  121 words of extra memory for PDF output out of 10000 (max. 10000000)
 
