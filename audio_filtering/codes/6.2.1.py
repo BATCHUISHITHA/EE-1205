@@ -11,7 +11,7 @@ sampl_freq=44100
 #order of the filter
 order=4
 
-#cutoff frquency 4kHz
+#cutoff frquency 10kHz
 cutoff_freq=10000.0 
 
 #digital frequency
