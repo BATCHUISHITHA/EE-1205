@@ -387,7 +387,7 @@ output_signal = signal.lfilter(b, a, input_signal)
 \end{lstlisting}
 in Problem:\eqref{1.2}  is executed through the following difference equation
 \begin{equation}
- \sum _{m=0}^{M}a\brak{m}y\brak{n-m}=\sum _{k=0}^{N}b\brak{k}x\brak{n-k} \label{7.1}
+ \sum _{m=0}^{M}a\brak{m}y\brak{n-m}=\sum _{k=0}^{N}b\brak{k}x\brak{n-k} \label{6.1}
 \end{equation}
 where the input signal is $x(n)$ and the output signal is $y(n)$ with initial values all 0. Replace
 \textbf{signal.filtfilt} with your own routine and verify.\\
@@ -408,34 +408,34 @@ And,
     M &= 5\\
     N&=5
 \end{align}
-From \ref{7.1} 
+From \ref{6.1} 
 \begin{align}
     &a\brak{0}y\brak{n} + a\brak{1}y\brak{n-1}+a\brak{2}y\brak{n-2}+a\brak{3}\\ \notag &y\brak{n-3} + a\brak{4}y\brak{n-4} =   b\brak{0}x\brak{n} + b\brak{1}x\brak{n-1}\\ \notag &+b\brak{2}x\brak{n-2}+b\brak{3}x\brak{n-3} + b\brak{4}x\brak{n-4} 
 \end{align}
 Difference Equation is given by :
 \begin{align}
-	&y(n) - \brak{3.66}y(n - 1) + \brak{5.05}y(n - 2) \nonumber \\
-	&- \brak{3.099}y(n - 3) + \brak{0.715}y(n - 4) \nonumber \\
-	&= \brak{1.45\times 10^{-5}}x(n) + \brak{5.74 \times 10^{-5}}x(n - 1) \nonumber \\
-	&+ \brak{8.62 \times 10^{-5}}x(n - 2) + \brak{5.74 \times 10^{-5}}x(n - 3) \nonumber \\
-	&+ \brak{1.43 \times 10^{-5}}x(n - 4)
+	&y(n) - \brak{0.65}y(n - 1) + \brak{0.62}y(n - 2) \nonumber \\
+	&- \brak{0.15}y(n - 3) + \brak{0.03}y(n - 4) \nonumber \\
+	&= \brak{0.05}x(n) + \brak{0.21}x(n - 1) \nonumber \\
+	&+ \brak{0.32}x(n - 2) + \brak{0.21}x(n - 3) \nonumber \\
+	&+ \brak{0.53}x(n - 4)
 \end{align}
-From \eqref{7.1} 
+From \eqref{6.1} 
 \begin{align}
     H(z) &= \frac{b_0 + b_1 z^{-1} + b_2 z^{-2} + \ldots + b_M z^{-N}}{a_0 + a_1 z^{-1} + a_2 z^{-2} + \ldots + a_N z^{-M}}\\
     H(z) &= \frac{\sum_{k = 0}^{N}b(k)z^{-k}}{\sum_{k = 0}^{M}a(k)z^{-k}} \label{eq:7.2}
 \end{align}
-Partial fraction on \eqref{eq:7.2} can be generalised as:
+Partial fraction on \eqref{eq:6.2} can be generalised as:
 \begin{align}
     H\brak{z}&= \sum_{i}\frac{r(i)}{1 - p(i)z^{-1}} + \sum_{j}k(j)z^{-j}
-	\label{eq:7.2.1}
+	\label{eq:6.2.1}
 \end{align}
 Now,
 \begin{align}
-    a^{n}u\brak{n} \system{Z} \frac{1}{1-az^{-1}} \label{eq:7.2.2}\\
-    \delta\brak{n-k} \system{Z} z^{-k}\label{eq:7.2.3}
+    a^{n}u\brak{n} \xleftrightarrow{\systemZ{}}  \frac{1}{1-az^{-1}} \label{eq:6.2.2}\\
+    \delta\brak{n-k} \xleftrightarrow{\systemZ{}} z^{-k}\label{eq:6.2.3}
 \end{align}
-Taking inverse z transform of \eqref{eq:7.2.1} by using \eqref{eq:7.2.2} and \eqref{eq:7.2.3}
+Taking inverse z transform of \eqref{eq:6.2.1} by using \eqref{eq:6.2.2} and \eqref{eq:6.2.3}
 \begin{align}
 h(n) &= \sum_{i}r(i)[p(i)]^nu(n) + \sum_{j}k(j)\delta(n - j)
 	\label{eq:7.2.4}
