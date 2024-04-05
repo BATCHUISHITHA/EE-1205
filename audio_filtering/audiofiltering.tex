@@ -332,11 +332,15 @@ https://github.com/BATCHUISHITHA/EE-1205/blob/main/audio_filtering/codes/4.5.py
 y(n) =  \sum_{k=-\infty}^{\infty}x(n-k)h(k)
 \end{equation}
 \solution
-In \eqref{eq:convolution}, replacing $k$ by $n - k$ 
+In \eqref{eq:convolution}, replacing $k$ by $n-m$ 
 \begin{align}
-y\brak{n} &= \sum_{n-k=-\infty}^{\infty}x(n-k)h(n-(n-k)) \\
- &= \sum_{k=-\infty}^{\infty}x(n - k)h(k)
+y\brak{n} &= \sum_{n-m=-\infty}^{\infty}x(n-m)h(n-(n-m)) \\
+ &= \sum_{n-m=-\infty}^{\infty}x(n-m)h(m)
 \end{align}
+Since, the variable in summation is dummy, replacing $m$ by $k$,
+\begin{align}
+&= \sum_{k=-\infty}^{\infty}x(n-k)h(k)
+\end{align} 
 \end{enumerate}
 
 \section{DFT AND FFT}
@@ -517,7 +521,7 @@ The below code plots the Butterworth Filter in analog domain by using bilinear t
 \begin{lstlisting}
 https://github.com/BATCHUISHITHA/EE-1205/blob/main/audio_filtering/codes/6.2.2.py
 \end{lstlisting}
-\begin{figure}[H]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=1\columnwidth]{figs/6.2.2.png}
 \caption{Butterworth Filter Frequency response in analog domain}
@@ -527,7 +531,7 @@ The below code plots the Pole-Zero Plot of the frequency response.
 \begin{lstlisting}
 https://github.com/BATCHUISHITHA/EE-1205/blob/main/audio_filtering/codes/6.2.3.py
 \end{lstlisting}
-\begin{figure}[H]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=1\columnwidth]{figs/6.2.3.png}
 \caption{There are complex poles. So $h\brak{n}$ should be damped sinusoid.}
