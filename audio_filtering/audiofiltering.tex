@@ -120,20 +120,46 @@ Show that
 \end{equation}
 and find
 \begin{equation}
-	\systemZ{} \cbrak{x(n-k)}.
+	\systemZ{} \cbrak{x(n-k)}. 
 \end{equation}
 \solution 
-From \eqref{z-transform}
+Let
 \begin{align}
- \systemZ{} \cbrak{x(n-1)} &=\sum _{n=-\infty }^{\infty }x(n-1)z^{-n} \\
-&=\sum _{n=-\infty }^{\infty }x(n)z^{-n-1} \\
-&= z^{-1}\sum _{n=-\infty }^{\infty }x(n)z^{-n}
+y(n) &= x(n-k) \label{eq:l1}
 \end{align}
- Hence, \eqref{z1}.\\
- Similarly, it can be shown that
-\begin{equation}
-	\systemZ{} \cbrak{x(n-k)} = z^{-k}X(z) \label{3.1}
-\end{equation}
+Taking z-transform
+\begin{align}
+\mathcal{Z}\brak{y(n)} &= \mathcal{Z}\brak{x(n-k)} \label{eq:l2}
+\end{align}
+Simplifying LHS
+\begin{align}
+Y(z) &= \sum_{n=-\infty}^{\infty} y(n)z^{-n} 
+\end{align}
+From \eqref{eq:l1}
+\begin{align}
+Y(z) &= \sum_{n=-\infty}^{\infty} x(n-k) z^{-n} \label{eq:l3}
+\end{align}
+Let 
+\begin{align}
+n-k &= s  \\\implies
+n &= s+k \label{eq:l4}
+\end{align}
+From \eqref{eq:l3} and \eqref{eq:l4}
+\begin{align}
+Y(z) &= \sum_{s=-\infty}^{\infty} x(s) z^{-(s+k)} \\
+&= z^{-k}\sum_{s=-\infty}^{\infty} x(s) z^{-s} 
+\end{align}
+As variable in Z-transform is dummy, on replacing it, we get
+\begin{align}
+Y(z) &= z^{-k}\sum_{n=-\infty}^{\infty} x(n) z^{-n} \\
+&= z^{-k}X(z) \label{eq:l5}
+\end{align}
+From \eqref{eq:l2} and \eqref{eq:l5}
+\begin{align}
+\mathcal{Z}\brak{x(n-k)} &= z^{-k}X(z) \label{z2}
+\end{align}
+Put $k = 1$ resulting in \eqref{z1} \\
+Hence proved \\
 \item Find
 \begin{align}
 H(z)=\frac{Y(z)}{X(z)}
@@ -169,10 +195,12 @@ is
 \begin{equation}
 U(z) = \frac{1}{1-z^{-1}}, \quad \abs{z} > 1
 \end{equation}
-\solution It is easy to show that
-\begin{equation}
-\delta(n) \xleftrightarrow{\systemZ{}} 1
-\end{equation}
+\solution
+ \begin{align}
+    Z\{ \delta[n] \} &= \sum_{n=-\infty}^{\infty} \delta[n] \cdot z^{-n} \\
+                     &= z^0 \\
+                     &= 1
+\end{align}
 and from \eqref{u(n)},
 \begin{align}
 U(z) &= \sum _{n= 0}^{\infty}z^{-n} \\
@@ -234,7 +262,7 @@ H(z) &= \frac{1}{1 + \frac{1}{2}z^{-1}} + \frac{ z^{-2}}{1 + \frac{1}{2}z^{-1}}
 \\
 \implies h(n) &= \brak{-\frac{1}{2}}^{n}u(n) + \brak{-\frac{1}{2}}^{n-2}u(n-2)
 \end{align}
-from \eqref{3.4} and \eqref{3.1}.
+from \eqref{3.4} and \eqref{z2}.
 \item Sketch $h(n)$. Is it bounded?Convergent?
 The following code plots h(n) vs n.
 \begin{lstlisting}
@@ -321,7 +349,7 @@ Y(k) = X(k)H(k) \label{eq:5.2.1}
 \begin{align}
 y\brak{n}={\frac {1}{N}}\sum _{k=0}^{N-1}Y\brak{k}\cdot e^{\frac{-2\pi jkn}{N}} ,\quad n = 0,1,\dots, N-1\label{eq:5.3.1}
 \end{align}
-\solution The above three questions are solved using the code below.
+\solution The above three questions are solved using the code below.\\
 \begin{lstlisting}
 https://github.com/BATCHUISHITHA/EE-1205/blob/main/audio_filtering/codes/5.py
 \end{lstlisting}
@@ -376,6 +404,15 @@ Thus we can rewrite  \eqref{eq:5.2.1} as:
 \end{align}
 where the $\odot$ represents the Hadamard product which performs element-wise multiplication.
 This is specifically called "SCHUR PRODUCT" when defined for matrices.
+\begin{lstlisting}
+https://github.com/BATCHUISHITHA/EE-1205/blob/main/audio_filtering/codes/5.5.py
+\end{lstlisting}
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.8\columnwidth]{figs/5.5.png}
+	\caption{$y(n)$ obtained from DFT matrix }
+	\label{fig:5.5}
+\end{figure}
 \end{enumerate}
 
 \section{EXERCISES}
@@ -414,16 +451,16 @@ From \ref{6.1}
 \end{align}
 Difference Equation is given by :
 \begin{align}
-	&y(n) - \brak{0.65}y(n - 1) + \brak{0.62}y(n - 2) \nonumber \\
-	&- \brak{0.15}y(n - 3) + \brak{0.03}y(n - 4) \nonumber \\
-	&= \brak{0.05}x(n) + \brak{0.21}x(n - 1) \nonumber \\
-	&+ \brak{0.32}x(n - 2) + \brak{0.21}x(n - 3) \nonumber \\
-	&+ \brak{0.53}x(n - 4)
+	&y(n) - \brak{3.63}y(n - 1) + \brak{4.95}y(n - 2) \nonumber \\
+	&- \brak{3.01}y(n - 3) + \brak{0.69}y(n - 4) \nonumber \\
+	&= \brak{2.15\times 10^{-5}}x(n) + \brak{8.60 \times 10^{-5}}x(n - 1) \nonumber \\
+	&+ \brak{1.29 \times 10^{-4}}x(n - 2) + \brak{8.60 \times 10^{-5}}x(n - 3) \nonumber \\
+	&+ \brak{2.15\times 10^{-5}}x(n - 4)
 \end{align}
 From \eqref{6.1} 
 \begin{align}
     H(z) &= \frac{b_0 + b_1 z^{-1} + b_2 z^{-2} + \ldots + b_M z^{-N}}{a_0 + a_1 z^{-1} + a_2 z^{-2} + \ldots + a_N z^{-M}}\\
-    H(z) &= \frac{\sum_{k = 0}^{N}b(k)z^{-k}}{\sum_{k = 0}^{M}a(k)z^{-k}} \label{eq:7.2}
+    H(z) &= \frac{\sum_{k = 0}^{N}b(k)z^{-k}}{\sum_{k = 0}^{M}a(k)z^{-k}} \label{eq:6.2}
 \end{align}
 Partial fraction on \eqref{eq:6.2} can be generalised as:
 \begin{align}
@@ -438,7 +475,7 @@ Now,
 Taking inverse z transform of \eqref{eq:6.2.1} by using \eqref{eq:6.2.2} and \eqref{eq:6.2.3}
 \begin{align}
 h(n) &= \sum_{i}r(i)[p(i)]^nu(n) + \sum_{j}k(j)\delta(n - j)
-	\label{eq:7.2.4}
+	\label{eq:6.2.4}
 \end{align}
 The below code computes the values of $r\brak{i},p\brak{i} , k\brak{i}$ and plots $h\brak{n}$
 \begin{lstlisting}
@@ -469,9 +506,9 @@ https://github.com/BATCHUISHITHA/EE-1205/blob/main/audio_filtering/codes/6.2.1.p
 \label{fig:6.2.1}
 \end{figure}
 \item What is the sampling frequency of the input signal? \\
-\solution The sampling frequency of the input signal is 4.80kHz.
+\solution The sampling frequency of the input signal is 44.1kHz.
 \item What is type, order and  cutoff-frequency of the above butterworth filter\\
-\solution The given butterworth filter is lowpass with order=$4$ and cutoff-frequency=$10kHz$.
+\solution The given butterworth filter is lowpass with order=$4$ and cutoff-frequency=$1kHz$.
 \item Modifying the code with different input parameters and to get the best possible output.\\
 \solution A better filtering was found on setting the order of the filter to be ...
 \end{enumerate}
