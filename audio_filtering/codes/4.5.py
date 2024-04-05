@@ -25,6 +25,6 @@ plt.title('Filter Output using Convolution')
 plt.xlabel('$n$')
 plt.ylabel('$y(n)$')
 plt.grid()
-plt.savefig('4.5.png')
+plt.savefig('../figs/4.5.png')
 
 

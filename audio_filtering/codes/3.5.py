@@ -18,4 +18,4 @@ plt.xlabel('$\omega$')
 plt.ylabel('$|H(e^{j\omega})| $')
 plt.grid()
 
-plt.savefig("3.5.png")
+plt.savefig("../figs/3.5.png")

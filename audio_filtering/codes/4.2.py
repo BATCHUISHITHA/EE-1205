@@ -11,7 +11,7 @@ plt.title('Filter Impulse Response')
 plt.xlabel('$n$')
 plt.ylabel('$h(n)$')
 plt.grid()
-plt.savefig('4.2.png')
+plt.savefig('../figs/4.2.png')
 
 
 
