@@ -67,6 +67,8 @@ https://github.com/BATCHUISHITHA/EE-1205/blob/main/audio_filtering/codes/ishitha
 \item Python code for removal of out of band noise:
 \lstinputlisting{./codes/1.2.py}  \label{1.2}
 \item Analysis of sound file before and after removal of noise using spectrogram ie: https://academo.org/demos/spectrum-analyzer.
+\solution
+The darker areas are those where the frequencies have very low intensities, and the orange and the yellow areas represent the frequencies that have high intensities in sound.
 \begin{figure}[ht]
     \includegraphics[width=0.8\columnwidth]{figs/beforefiltering.png }
     \caption{Spectrogram of the audio file before Filtering}
@@ -263,7 +265,9 @@ H(z) &= \frac{1}{1 + \frac{1}{2}z^{-1}} + \frac{ z^{-2}}{1 + \frac{1}{2}z^{-1}}
 \implies h(n) &= \brak{-\frac{1}{2}}^{n}u(n) + \brak{-\frac{1}{2}}^{n-2}u(n-2)
 \end{align}
 from \eqref{3.4} and \eqref{z2}.
-\item Sketch $h(n)$. Is it bounded?Convergent?
+\item Sketch $h(n)$. Is it bounded?Convergent?\\
+\solution
+Yes, h(n) is convergent and bounded.\\
 The following code plots h(n) vs n.
 \begin{lstlisting}
 https://github.com/BATCHUISHITHA/EE-1205/blob/main/audio_filtering/codes/4.2.py
@@ -322,6 +326,7 @@ https://github.com/BATCHUISHITHA/EE-1205/blob/main/audio_filtering/codes/4.5.py
 \caption{$y(n)$ from the definition of convolution}
 \label{fig:4.5}
 \end{figure}
+\newpage
 \item Show that
 \begin{equation}
 y(n) =  \sum_{k=-\infty}^{\infty}x(n-k)h(k)
@@ -409,7 +414,7 @@ https://github.com/BATCHUISHITHA/EE-1205/blob/main/audio_filtering/codes/5.5.py
 \end{lstlisting}
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.8\columnwidth]{figs/5.5.png}
+	\includegraphics[width=\columnwidth]{figs/5.5.png}
 	\caption{$y(n)$ obtained from DFT matrix }
 	\label{fig:5.5}
 \end{figure}
@@ -505,11 +510,35 @@ https://github.com/BATCHUISHITHA/EE-1205/blob/main/audio_filtering/codes/6.2.1.p
 \caption{Frequency Response of Audio Filter}
 \label{fig:6.2.1}
 \end{figure}
+The below code plots the Butterworth Filter in analog domain by using bilinear transform.
+\begin{align}
+    z=\frac{1+sT/2}{1-sT/2}
+\end{align}
+\begin{lstlisting}
+https://github.com/BATCHUISHITHA/EE-1205/blob/main/audio_filtering/codes/6.2.2.py
+\end{lstlisting}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\columnwidth]{figs/6.2.2.png}
+\caption{Butterworth Filter Frequency response in analog domain}
+\label{fig:6.2.2}
+\end{figure}
+The below code plots the Pole-Zero Plot of the frequency response.
+\begin{lstlisting}
+https://github.com/BATCHUISHITHA/EE-1205/blob/main/audio_filtering/codes/6.2.3.py
+\end{lstlisting}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\columnwidth]{figs/6.2.3.png}
+\caption{There are complex poles. So $h\brak{n}$ should be damped sinusoid.}
+\label{fig:6.2.3}
+\end{figure}
+
 \item What is the sampling frequency of the input signal? \\
 \solution The sampling frequency of the input signal is 44.1kHz.
 \item What is type, order and  cutoff-frequency of the above butterworth filter\\
 \solution The given butterworth filter is lowpass with order=$4$ and cutoff-frequency=$1kHz$.
 \item Modifying the code with different input parameters and to get the best possible output.\\
-\solution A better filtering was found on setting the order of the filter to be ...
+\solution A better filtering was found on setting the order of the filter to be 5.
 \end{enumerate}
 \end{document}
