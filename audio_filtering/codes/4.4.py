@@ -16,5 +16,5 @@ plt.title('Impulse Response Definition')
 plt.xlabel('$n$')
 plt.ylabel('$h(n)$')
 plt.grid()
-plt.savefig('5.4.png')
+plt.savefig('4.4.png')
 
