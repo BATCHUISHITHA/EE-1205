@@ -14,7 +14,7 @@ print(sampl_freq)
 order = 4
 
 #cutoff frquency 
-cutoff_freq = 10000.0  
+cutoff_freq = 1000.0  
 
 #digital frequency
 Wn = 2 * cutoff_freq / sampl_freq  
@@ -47,4 +47,4 @@ plt.stem(sz_lin, h)
 plt.xlabel('n')
 plt.ylabel('h(n)')
 plt.grid()
-plt.savefig("6.2.png")
+plt.savefig("../figs/6.2.png")

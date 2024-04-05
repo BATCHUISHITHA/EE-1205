@@ -37,5 +37,5 @@ plt.title('Filter Output using DFT')
 plt.xlabel('$n$')
 plt.ylabel('$y(n)$')
 plt.grid()
-plt.savefig('5.png')
+plt.savefig('../figs/5.png')
 

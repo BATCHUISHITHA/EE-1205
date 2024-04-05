@@ -11,8 +11,8 @@ sampl_freq=44100
 #order of the filter
 order=4
 
-#cutoff frquency 10kHz
-cutoff_freq=10000.0 
+#cutoff frquency 1kHz
+cutoff_freq=1000.0 
 
 #digital frequency
 Wn=2*cutoff_freq/sampl_freq  
@@ -37,4 +37,4 @@ plt.xlabel('$\omega$')
 plt.ylabel('$|H(e^{\jmath\omega})| $')
 plt.title("Butterworth Filter in Analog Domain")
 plt.grid()
-plt.savefig("6.2.1.png")
+plt.savefig("../figs/6.2.1.png")

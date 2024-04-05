@@ -1,44 +1,48 @@
 import soundfile as sf
-from scipy import signal
+from scipy import signal, fft
 import numpy as np
+from numpy.polynomial import Polynomial as P
 from matplotlib import pyplot as plt
 
 def myfiltfilt(b, a, input_signal):
-    # Perform zero-phase filtering using FFT
-    output_signal = signal.filtfilt(b, a, input_signal, padlen=1)
-    return output_signal
+    X = fft.fft(input_signal)
+    w = np.linspace(0, 1, len(X) + 1)
+    W = np.exp(2j*np.pi*w[:-1])
+    B = (np.absolute(np.polyval(b,W)))**2
+    A = (np.absolute(np.polyval(a,W)))**2
+    Y = B*(1/A)*X
+    return fft.ifft(Y).real
 
-# Read the input .wav file
-input_signal, fs = sf.read('ishitha.wav')
+#read .wav file 
+input_signal,fs = sf.read('ishitha.wav') 
+print(len(input_signal))
+np.savetxt("in.txt", input_signal)
 
-# Sampling frequency of input signal
-sampl_freq = fs
+#sampling frequency of Input signal
+sampl_freq=fs
 
-# Order of the filter
-order = 4
+#order of the filter
+order=4   
 
-# Cutoff frequency 
-cutoff_freq = 10000.0
+#cutoff frquency 
+cutoff_freq=1000.0  
 
-# Digital frequency
-Wn = 2 * cutoff_freq / sampl_freq
+#digital frequency
+Wn=2*cutoff_freq/sampl_freq  
 
-# Design Butterworth filter
-b, a = signal.butter(order, Wn, 'low')
+# b and a are numerator and denominator polynomials respectively
+b, a = signal.butter(order, Wn, 'low') 
 
-# Filter the input signal with Butterworth filter using filtfilt
-output_signal = myfiltfilt(b, a, input_signal)
-
+#filter the input signal with butterworth filter
+output_signal = signal.filtfilt(b, a, input_signal)
 
 op1 = myfiltfilt(b, a, input_signal)
-
-# Verify outputs by plotting
 x_plt = np.arange(len(input_signal))
+#Verify outputs by plotting
 plt.plot(x_plt[1000:10000], output_signal[1000:10000], 'b.',label='Output by built in function')
 plt.plot(x_plt[1000:10000], op1[1000:10000], 'r.',label='Output by not using built in function')
 plt.title("Verification of outputs of Audio Filter")
 plt.grid()
 plt.legend()
-plt.savefig("6.1.png")
+plt.savefig("../figs/6.1.png")
 plt.show()
-
