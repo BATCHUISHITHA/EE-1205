@@ -18,4 +18,4 @@ plt.xlabel('$\omega$')
 plt.ylabel('$|H(e^{j\omega})| $')
 plt.grid()
 
-plt.savefig("dtft.png")
+plt.savefig("3.5.png")
