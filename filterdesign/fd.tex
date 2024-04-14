@@ -265,7 +265,11 @@ Thus the response in s domain
 The expressions in the s-domain and gain factors are computed by writing a Python code. \\
 In Figure 3, we plot $\vert H_{a,BP}(j\Omega)\vert$ as a function of $\Omega$ for both positve as
 well as negative frequencies.  We find that the passband and stopband frequencies in the figure
-match well with those obtained analytically through the bilinear transformation.
+match well with those obtained analytically through the bilinear transformation.\\
+The below code plots the figure below
+\begin{lstlisting}
+https://github.com/BATCHUISHITHA/EE-1205/blob/main/filterdesign/codes/4.py
+\end{lstlisting}
 \begin{figure}[H]
 \centering
 \includegraphics[width=1\columnwidth]{figs/4.png}
@@ -283,7 +287,11 @@ Substituting $s=\frac{1-z^{-1}}{1+z^{-1}}$ in \eqref{eq:magnitude_bandpass_sdom}
     H_{d,BP}(z) &= \frac{z^{-8} - 4z^{-6} + 6z^{-4} - 4z^{-2} + 1}{2.25513z^{-8} - 11.8294z^{-7} + 31.8104z^{-6} - 54.0037z^{-5} + 63.1771z^{-4} - 51.3499z^{-3} + 28.7937z^{-2} - 10.1792z^{-1} + 1.84411}
 \end{align}
 
-where $G=3.14\times 10^{-5}$    
+where $G=3.14\times 10^{-5}$ \\
+The below code plots  the figure below
+\begin{lstlisting}
+https://github.com/BATCHUISHITHA/EE-1205/blob/main/filterdesign/codes/5.py
+\end{lstlisting}   
 \begin{figure}[H]
 \centering
 \includegraphics[width=1\columnwidth]{figs/5.png}
@@ -303,6 +311,11 @@ The stopband tolerance is $\delta=0.15$.The cutoff-frequency is given by :
     \omega_{l} &= \frac{B}{2}\\
                 &= 0.025\pi
 \end{align}
+
+The below code plots the figure below
+\begin{lstlisting}
+https://github.com/BATCHUISHITHA/EE-1205/blob/main/filterdesign/codes/6.py
+\end{lstlisting} 
 \begin{figure}[H]
 \centering
 \includegraphics[width=1\columnwidth]{figs/6.png}
@@ -366,6 +379,11 @@ Therefore the desired impulse response is :
 \end{cases} \label{eq:h(n)desired_for_LPF}
 \end{align}
 \end{enumerate}
+
+The below code plots  the figure below
+\begin{lstlisting}
+https://github.com/BATCHUISHITHA/EE-1205/blob/main/filterdesign/codes/7.py
+\end{lstlisting} 
 \begin{figure}[H]
 \centering
 \includegraphics[width=1\columnwidth]{figs/7.png}
@@ -381,21 +399,25 @@ A Band-Pass Filter (BPF) can be obtained by subtracting the magnitude response o
 \begin{cases} 
     \frac{\sin(w_{p2} n)}{n\pi} -\frac{\sin\brak{\omega_{p1}n}}{n\pi},  & \text{for } n\neq 0\\\
     \frac{\omega_{p2}-\omega_{p1}}{\pi} &\text{for} n= 0
-\end{cases} \label{eq:h(n)desired_for_LPF}
+\end{cases} \label{eq:h(n)desired_for_LPF1}
 \end{align}
 \begin{align}
-     \frac{\sin(\omega_{p2} n)}{n\pi} -\frac{\sin\brak{\omega_{p1}n}}{n\pi} &= 2\cos{\brak{\frac{\omega_{p2}n+\omega_{p1}n}{2}}}\sin{\brak{\frac{\omega_{p2}n-\omega_{p1}n}{2}}}\\
-            &= \frac{2\cos{\brak{0.365n\pi}}\sin{\brak{0.025n\pi}}}{n\pi}
+     \frac{\sin(\omega_{p2} n)}{n\pi} -\frac{\sin\brak{\omega_{p1}n}}{n\pi} &= \frac{2\cos{\brak{\frac{\omega_{p2}n+\omega_{p1}n}{2}}}\sin{\brak{\frac{\omega_{p2}n-\omega_{p1}n}{2}}}}{n \pi}\\
+            &= \frac{2\cos{\brak{0.265n\pi}}\sin{\brak{0.025n\pi}}}{n\pi}
 \end{align}
 Multipying by window function we get :
 \begin{align}
     h_{BP}\brak{n} = 
 \begin{cases} 
-   \frac{2\cos{\brak{0.365n\pi}}\sin{\brak{0.025n\pi}}}{n\pi},  & \text{for } -48\leq n \leq 48 \\
+   \frac{2\cos{\brak{0.265n\pi}}\sin{\brak{0.025n\pi}}}{n\pi},  & \text{for } -48\leq n \leq 48 \\
     0 &\text{otherwise}
-\end{cases} \label{eq:h(n)desired_for_LPF}
+\end{cases} \label{eq:h(n)desired_for_LPF2}
 \end{align}
 
+The below code plots the figure below
+\begin{lstlisting}
+https://github.com/BATCHUISHITHA/EE-1205/blob/main/filterdesign/codes/8.py
+\end{lstlisting} 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\columnwidth]{figs/8.png}
